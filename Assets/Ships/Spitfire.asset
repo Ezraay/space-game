@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 350c706b56004cceae52a27ac5cbd844, type: 3}
+  m_Name: Spitfire
+  m_EditorClassIdentifier: 
+  name: Spitfire
+  id: spitfire
+  forwardSpeed: 20
+  backwardSpeed: 1
+  strafeSpeed: 1
+  rotateSpeed: 90
+  acceleration: 40
+  rotateAcceleration: 360
+  tiltAmount: 25
+  shotCooldown: 0.1
+  projectile: {fileID: 4548026034678658014, guid: 48cac5bc6b4960445a1f0865043f90f0, type: 3}
+  creditCost: 1000
+  tier: 1
+  sprite: {fileID: 21300000, guid: e63e0498284944b47a35c0dcf291fbed, type: 3}

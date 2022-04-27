@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 350c706b56004cceae52a27ac5cbd844, type: 3}
+  m_Name: Dispatcher
+  m_EditorClassIdentifier: 
+  name: Dispatcher
+  id: dispatcher
+  forwardSpeed: 6
+  backwardSpeed: 0.5
+  strafeSpeed: 1
+  rotateSpeed: 50
+  acceleration: 0.3
+  rotateAcceleration: 10
+  tiltAmount: 35
+  shotCooldown: 0.2
+  projectile: {fileID: 4548026034678658014, guid: 48cac5bc6b4960445a1f0865043f90f0, type: 3}
+  creditCost: 5000
+  tier: 1
+  sprite: {fileID: 21300000, guid: 1793bc719013d4d4c930c9c8fde14ea2, type: 3}
