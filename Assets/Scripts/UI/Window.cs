@@ -28,7 +28,7 @@ namespace Spaceships.UI
         {
             if (shown)
                 Hide();
-            else 
+            else
                 Show();
         }
     }

@@ -24,7 +24,7 @@ namespace Spaceships
         private void Update()
         {
             float zoomChange = (maxZoom - minZoom) / zoomStep;
-            zoom = Mathf.Clamp(zoom + zoomChange * InputController.ZoomInput, minZoom, maxZoom);
+            zoom = Mathf.Clamp(zoom + zoomChange * InputController.zoomInput, minZoom, maxZoom);
             camera.orthographicSize = zoom;
         }
 

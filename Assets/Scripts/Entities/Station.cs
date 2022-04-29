@@ -1,12 +1,13 @@
+using System.Collections.Generic;
 using Spaceships.Entities.AI;
 using Spaceships.Environment;
+using Spaceships.SceneTransitions;
 using UnityEngine;
 
 namespace Spaceships.Entities
 {
     public class Station : Interactable
     {
-        public override string InteractText => "Board Station";
         [SerializeField] private float rotateSpeed = 5;
         [SerializeField] private Transform spawnParent;
         [SerializeField] private ShipData[] shipsToSpawn;
@@ -15,12 +16,16 @@ namespace Spaceships.Entities
         [SerializeField] private AIPersonality randomShipPersonality;
         [SerializeField] private new string name = "New Station";
 
-        private Transform[] spawns;
         private float spawnCooldown;
+        private readonly List<Transform> spawns = new List<Transform>();
+        public override string InteractText => "Board Station";
 
         private void Awake()
         {
-            spawns = spawnParent.GetComponentsInChildren<Transform>();
+            foreach (Transform spawn in spawnParent)
+            {
+                spawns.Add(spawn);
+            }
         }
 
         private void Update()
@@ -28,12 +33,13 @@ namespace Spaceships.Entities
             transform.Rotate(Vector3.back, rotateSpeed * Time.deltaTime);
 
             spawnCooldown -= Time.deltaTime;
-            if (spawnCooldown < 0) 
+            if (spawnCooldown < 0)
                 SpawnRandomShip();
         }
 
         private void SpawnRandomShip()
         {
+            // Creates a random AI ship
             spawnCooldown = Random.Range(minSpawnCooldown, maxSpawnCooldown);
             ShipData shipData = shipsToSpawn[Random.Range(0, shipsToSpawn.Length)];
             Ship newShip = SummonShip(shipData.ID);
@@ -44,8 +50,8 @@ namespace Spaceships.Entities
 
         public Ship SummonShip(string shipID)
         {
-            Transform spawn = spawns[Random.Range(0, spawns.Length)];
-            // Ship ship = Instantiate(shipPrefab, spawn.position, spawn.rotation);
+            // Summons a ship and returns it
+            Transform spawn = spawns[Random.Range(0, spawns.Count)];
             Ship ship = ShipFactory.SpawnShip(shipID, spawn.position, spawn.rotation);
             ship.forwardVelocity = ship.ShipData.ForwardSpeed;
             return ship;
@@ -53,8 +59,8 @@ namespace Spaceships.Entities
 
         public override void Interact()
         {
-            SceneTransitions.HangarData.stationName = name;
-            SceneTransitions.Loader.LoadHangar();
+            HangarData.stationName = name;
+            Loader.LoadHangar();
         }
     }
 }

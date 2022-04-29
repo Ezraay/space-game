@@ -1,4 +1,4 @@
-﻿using System;
+﻿using Spaceships.SceneTransitions;
 using UnityEngine;
 
 namespace Spaceships.Hangar
@@ -6,10 +6,10 @@ namespace Spaceships.Hangar
     public class HangarManager : MonoBehaviour
     {
         public static string hangarName;
-        
+
         private void Start()
         {
-            hangarName = SceneTransitions.HangarData.stationName;
+            hangarName = HangarData.stationName;
         }
     }
 }

@@ -16,7 +16,7 @@ MonoBehaviour:
   id: spitfire
   forwardSpeed: 20
   backwardSpeed: 1
-  strafeSpeed: 1
+  strafeSpeed: 5
   rotateSpeed: 90
   acceleration: 40
   rotateAcceleration: 360

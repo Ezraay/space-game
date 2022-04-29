@@ -7,7 +7,7 @@ namespace Spaceships.Entities.AI
     public class ShipAI : MonoBehaviour
     {
         public AIPersonality personality;
-        public Dictionary<string, object> data;
+        public Dictionary<string, object> data; // Data used by behaviours for persistance
         private Ship ship;
 
         private void Start()

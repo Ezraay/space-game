@@ -1,6 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Spaceships.Entities;
+using Spaceships.SceneTransitions;
 using UnityEngine;
 
 namespace Spaceships.Environment
@@ -9,9 +9,9 @@ namespace Spaceships.Environment
     {
         [SerializeField] private Level[] levels;
         [SerializeField] private string levelToLoad = "New Level";
-        
+
         private Level currentLevel;
-        private Dictionary<string, Level> levelData = new Dictionary<string, Level>();
+        private readonly Dictionary<string, Level> levelData = new Dictionary<string, Level>();
 
         private void Start()
         {
@@ -19,29 +19,30 @@ namespace Spaceships.Environment
             {
                 Destroy(level.gameObject);
             }
-            
+
             foreach (Level level in levels)
             {
                 levelData.Add(level.Name, level);
             }
-            
+
             LoadLevel(levelToLoad);
-            string playerShipID = SceneTransitions.SpaceData.playerShipID ?? Player.DefaultShip;
-            // playerShip = ShipFactory.shipData[playerShipID].ShipData;
+            string playerShipID = SpaceData.playerShipID ?? Player.DefaultShip;
             currentLevel.SpawnPlayer(playerShipID);
         }
 
         private void UnloadLevel()
         {
+            // Destroy the current level object
             Destroy(currentLevel);
         }
-        
+
         private void LoadLevel(string levelName)
         {
+            // Loads a new level object
             levelData.TryGetValue(levelName, out Level newLevel);
-            if (newLevel == null) 
+            if (newLevel == null)
                 Debug.LogError("No such level: " + levelName);
-            
+
             UnloadLevel();
             currentLevel = Instantiate(newLevel);
         }

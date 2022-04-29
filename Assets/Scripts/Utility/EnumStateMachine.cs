@@ -7,7 +7,7 @@ namespace Spaceships.Utility
     {
         private readonly Dictionary<T, List<EnumTransition>> transitions = new Dictionary<T, List<EnumTransition>>();
 
-        public EnumStateMachine(T startingState) : base((int)(object) startingState)
+        public EnumStateMachine(T startingState) : base((int) (object) startingState)
         {
             State = startingState;
         }
@@ -16,7 +16,7 @@ namespace Spaceships.Utility
 
         public void AddTransition(T from, int to, TransitionFunction function, OnTransition onTransition)
         {
-            base.AddTransition((int)(object)from, to, function, onTransition);
+            base.AddTransition((int) (object) from, to, function, onTransition);
         }
 
         public override void CheckTransitions()
@@ -33,17 +33,14 @@ namespace Spaceships.Utility
             }
         }
 
-        public class EnumTransition : StateMachine.Transition
+        public class EnumTransition : Transition
         {
-            // private readonly TransitionFunction function;
-            // public readonly OnTransition onTransition;
             public new readonly T to;
 
-            public EnumTransition(T to, TransitionFunction function, OnTransition onTransition) : base((int)(object)to, function, onTransition)
+            public EnumTransition(T to, TransitionFunction function, OnTransition onTransition) : base(
+                (int) (object) to, function, onTransition)
             {
                 this.to = to;
-                // this.function = function;
-                // this.onTransition = onTransition;
             }
         }
     }

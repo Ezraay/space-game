@@ -14,7 +14,7 @@ namespace Spaceships.Utility
             {
                 active = true;
                 DontDestroyOnLoad(gameObject);
-                
+
                 Application.targetFrameRate = 60; // Not sure where else to put this
             }
         }

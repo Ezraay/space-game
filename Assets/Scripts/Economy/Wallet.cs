@@ -1,28 +1,27 @@
-﻿using System;
+﻿using NaughtyAttributes;
 using UnityEngine;
 
 namespace Spaceships.Economy
 {
     public class Wallet : MonoBehaviour
     {
-        public static int Credits => credits;
-
-        private static int credits;
+        [ShowNativeProperty]
+        public static int Credits { get; private set; }
 
         private void Start()
         {
-            credits = 100000; // Temporary for testing
+            Credits = 100000; // Temporary for testing
         }
 
         public static void AddCredits(int amount)
         {
-            credits += amount;
+            Credits += amount;
         }
 
         public static void RemoveCredits(int amount)
         {
-            credits -= amount;
-            credits = Mathf.Max(credits, 0);
+            Credits -= amount;
+            Credits = Mathf.Max(Credits, 0);
         }
     }
 }

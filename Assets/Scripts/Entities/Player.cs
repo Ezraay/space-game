@@ -18,10 +18,10 @@ namespace Spaceships.Entities
             if (ship == null)
                 return;
 
-            ship.thrustInput = InputController.ThrustInput;
-            ship.strafeInput = InputController.StrafeInput;
-            ship.rotationInput = InputController.RotationInput;
-            if (InputController.ShootInput)
+            ship.thrustInput = InputController.thrustInput;
+            ship.strafeInput = InputController.strafeInput;
+            ship.rotationInput = InputController.rotationInput;
+            if (InputController.shootInput)
                 ship.Shoot();
 
             Collider2D[] interactables =
@@ -32,7 +32,7 @@ namespace Spaceships.Entities
                 Interactable interactable = item.GetComponent<Interactable>();
                 if (interactable != null)
                 {
-                    if (InputController.InteractInput)
+                    if (InputController.interactInput)
                         Interact(interactable);
                     availableInteractable = interactable;
                     break;

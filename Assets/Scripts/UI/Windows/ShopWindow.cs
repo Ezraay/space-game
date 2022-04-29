@@ -11,7 +11,6 @@ namespace Spaceships.UI.Windows
         protected override void Start()
         {
             base.Start();
-
             
             foreach (Ship ship in ShipFactory.shipData.Values)
             {

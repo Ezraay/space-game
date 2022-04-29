@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Spaceships.Entities.Combat;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -19,7 +20,7 @@ namespace Spaceships.Entities
 
         [HideInInspector] public float forwardVelocity;
         [HideInInspector] public float rotationVelocity;
-        private List<Transform> gunLocations = new List<Transform>();
+        private readonly List<Transform> gunLocations = new List<Transform>();
         private Transform model;
 
         private new Rigidbody2D rigidbody;
@@ -117,11 +118,9 @@ namespace Spaceships.Entities
             rotationVelocity = Mathf.Clamp(rotationVelocity, -shipData.RotateSpeed, shipData.RotateSpeed);
 
             transform.Rotate(Vector3.back * rotationVelocity * Time.fixedDeltaTime * Mathf.Sign(forwardVelocity));
-            // transform.Rotate(Vector3.up * rotationVelocity * Time.fixedDeltaTime);
-            float strafeVelocity = strafeInput * shipData.StrafeSpeed * Time.deltaTime;
+            float strafeVelocity = strafeInput * shipData.StrafeSpeed;
             Vector2 velocity = new Vector2(strafeVelocity, forwardVelocity);
-
-            // Quaternion flatRotation = Quaternion
+            
             rigidbody.velocity = transform.rotation * velocity;
         }
     }
