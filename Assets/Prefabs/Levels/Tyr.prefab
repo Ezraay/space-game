@@ -54,6 +54,7 @@ MonoBehaviour:
   minSpawnCooldown: 3
   maxSpawnCooldown: 20
   randomShipPersonality: {fileID: 11400000, guid: fc621a9573dd79e48b4688059163f873, type: 2}
+  name: Tyr
 --- !u!58 &773194782902705654
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -179,7 +180,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainStation: {fileID: 90947208702492039}
-  player: {fileID: 0}
   name: Tyr
   mapLocation: {x: 10, y: 10}
 --- !u!1 &2503074882107727208

@@ -16,7 +16,6 @@ namespace Spaceships
             thrustInput = Input.GetAxisRaw("Vertical");
             rotationInput = Input.GetAxisRaw("Horizontal");
             strafeInput = (Input.GetKey(KeyCode.E) ? 1 : 0) - (Input.GetKey(KeyCode.Q) ? 1 : 0);
-            Debug.Log(strafeInput);
             zoomInput = -Input.mouseScrollDelta.y;
             shootInput = Input.GetMouseButton(0);
             interactInput = Input.GetKeyDown(KeyCode.F);

@@ -26,8 +26,7 @@ namespace Spaceships.Environment
             }
 
             LoadLevel(levelToLoad);
-            string playerShipID = SpaceData.playerShipID ?? Player.DefaultShip;
-            currentLevel.SpawnPlayer(playerShipID);
+            currentLevel.SpawnPlayer(SpaceData.playerShipID);
         }
 
         private void UnloadLevel()

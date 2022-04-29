@@ -5,7 +5,6 @@ namespace Spaceships.Entities
 {
     public class Player : MonoBehaviour
     {
-        public const string DefaultShip = "spitfire";
         public static Interactable availableInteractable;
         public static Ship ship;
         [SerializeField] private float interactRadius = 10;

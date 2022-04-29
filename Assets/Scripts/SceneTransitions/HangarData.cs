@@ -2,6 +2,6 @@
 {
     public static class HangarData
     {
-        public static string stationName;
+        public static string stationName = "Tyr";
     }
 }

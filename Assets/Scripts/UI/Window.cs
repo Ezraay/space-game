@@ -1,9 +1,13 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace Spaceships.UI
 {
     public class Window : Element
     {
+        [HideInInspector] public UnityEvent onShow = new UnityEvent();
+        [HideInInspector] public UnityEvent onHide = new UnityEvent();
+        
         [SerializeField] private GameObject content;
         private bool shown;
 
@@ -16,12 +20,14 @@ namespace Spaceships.UI
         {
             content.SetActive(true);
             shown = true;
+            onShow.Invoke();
         }
 
         public virtual void Hide()
         {
             content.SetActive(false);
             shown = false;
+            onHide.Invoke();
         }
 
         public void Toggle()
