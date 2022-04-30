@@ -9,6 +9,7 @@ namespace Spaceships.Environment
     {
         [SerializeField] private Level[] levels;
         [SerializeField] private string levelToLoad = "New Level";
+        [SerializeField] private ShipData testingShip;
 
         private Level currentLevel;
         private readonly Dictionary<string, Level> levelData = new Dictionary<string, Level>();
@@ -26,7 +27,9 @@ namespace Spaceships.Environment
             }
 
             LoadLevel(levelToLoad);
-            currentLevel.SpawnPlayer(SpaceData.playerShipID ?? "spitfire"); // ?? spitfire is for testing
+            if (SpaceData.playerShipID == null)
+                SpaceData.playerShipID = testingShip.ID;// is for testing
+            currentLevel.SpawnPlayer(SpaceData.playerShipID); 
         }
 
         private void UnloadLevel()

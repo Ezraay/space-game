@@ -34,7 +34,7 @@ namespace Spaceships.Entities
         protected override void Start()
         {
             base.Start();
-            
+
             rigidbody = GetComponent<Rigidbody2D>();
             trails = GetComponentsInChildren<ShipTrail>();
             model = transform.GetChild(0);

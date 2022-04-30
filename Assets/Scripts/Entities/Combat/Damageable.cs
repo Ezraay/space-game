@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -12,7 +11,7 @@ namespace Spaceships.Entities.Combat
         public float Health { get; private set; }
 
         public abstract float MaxHealth { get; }
-        
+
         protected virtual void Start()
         {
             Health = MaxHealth;
