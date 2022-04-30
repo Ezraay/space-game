@@ -3,7 +3,7 @@ using Spaceships.Entities;
 using Spaceships.Hangar;
 using UnityEngine;
 
-namespace Spaceships.UI.Windows
+namespace Spaceships.UI.Hangar.Windows
 {
     public class ShopWindow : Window
     {
@@ -13,15 +13,12 @@ namespace Spaceships.UI.Windows
         protected override void Start()
         {
             base.Start();
-            
+
             foreach (Ship ship in ShipFactory.shipData.Values)
             {
                 ShopSlot newSlot = Instantiate(slotPrefab, slotParent);
                 newSlot.Setup(ship.ShipData);
-                newSlot.onClick.AddListener(() =>
-                {
-                    TryBuy(newSlot.ShipData);
-                });
+                newSlot.onClick.AddListener(() => { TryBuy(newSlot.ShipData); });
             }
         }
 

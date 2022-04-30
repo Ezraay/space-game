@@ -2,7 +2,7 @@ using Spaceships.Entities;
 using Spaceships.Hangar;
 using UnityEngine;
 
-namespace Spaceships.UI.Windows
+namespace Spaceships.UI.Hangar.Windows
 {
     public class ShipStorageWindow : Window
     {
@@ -13,10 +13,11 @@ namespace Spaceships.UI.Windows
         protected override void Start()
         {
             base.Start();
-            
+
             CreateAllSlots();
-            
-            HangarManager.ShipStorage.onAdd.AddListener(shipData => AddSlot(shipData, HangarManager.ShipStorage.items.Count - 1));
+
+            HangarManager.ShipStorage.onAdd.AddListener(shipData =>
+                AddSlot(shipData, HangarManager.ShipStorage.items.Count - 1));
         }
 
         private void CreateAllSlots()
@@ -25,7 +26,7 @@ namespace Spaceships.UI.Windows
             {
                 Destroy(slot.gameObject);
             }
-            
+
             for (int i = 0; i < HangarManager.ShipStorage.items.Count; i++)
             {
                 ShipData shipData = HangarManager.ShipStorage.items[i];
@@ -47,7 +48,7 @@ namespace Spaceships.UI.Windows
             {
                 if (activeShip != null)
                     activeShip.UnsetActive();
-                    
+
                 HangarManager.ShipStorage.SetActiveShip(index);
                 newSlot.SetActive();
                 activeShip = newSlot;

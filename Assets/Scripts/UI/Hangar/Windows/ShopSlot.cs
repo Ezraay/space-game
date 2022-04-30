@@ -4,39 +4,30 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 
-namespace Spaceships.UI.Windows
+namespace Spaceships.UI.Hangar.Windows
 {
-    public class ShipStorageSlot : MonoBehaviour
+    [RequireComponent(typeof(Button))]
+    public class ShopSlot : Element
     {
         [HideInInspector] public UnityEvent onClick = new UnityEvent();
-        
+
         [SerializeField] private Text titleText;
         [SerializeField] private Text tierText;
-        [SerializeField] private Text equippedText;
+        [SerializeField] private Text costText;
 
         private Button button;
-        private ShipData shipData;
-        
+        public ShipData ShipData { get; private set; }
+
 
         public void Setup(ShipData shipData)
         {
             button = GetComponent<Button>();
-            this.shipData = shipData;
-            
+            ShipData = shipData;
+
             titleText.text = shipData.Name;
             tierText.text = $"Tier {RomanNumeral.Convert(shipData.Tier)}";
+            costText.text = $"CR {shipData.CreditCost.ToString()}";
             button.onClick.AddListener(() => onClick.Invoke());
-            UnsetActive();
-        }
-
-        public void SetActive()
-        {
-            equippedText.gameObject.SetActive(true);
-        }
-
-        public void UnsetActive()
-        {
-            equippedText.gameObject.SetActive(false);
         }
     }
 }

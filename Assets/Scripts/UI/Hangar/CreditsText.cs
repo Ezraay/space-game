@@ -2,7 +2,7 @@ using Spaceships.Economy;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Spaceships.UI
+namespace Spaceships.UI.Hangar
 {
     public class CreditsText : MonoBehaviour
     {
