@@ -1,5 +1,4 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Spaceships.Entities.Combat
 {
@@ -11,6 +10,22 @@ namespace Spaceships.Entities.Combat
         private float damage;
         private int pierce;
 
+
+        private void FixedUpdate()
+        {
+            transform.Translate(-Vector2.up * speed * Time.fixedDeltaTime);
+        }
+
+        private void OnCollisionEnter2D(Collision2D col)
+        {
+            TryHit(col.gameObject);
+        }
+
+        private void OnTriggerEnter2D(Collider2D col)
+        {
+            TryHit(col.gameObject);
+        }
+
         public void Setup(float damage, Ship creator, float angle, int pierce)
         {
             this.damage = damage;
@@ -18,13 +33,6 @@ namespace Spaceships.Entities.Combat
             this.pierce = 1;
             transform.rotation = Quaternion.Euler(0, 0, angle);
             Destroy(gameObject, distance / speed);
-        }
-        
-        
-
-        private void FixedUpdate()
-        {
-            transform.Translate(-Vector2.up * speed * Time.fixedDeltaTime);
         }
 
         private void TryHit(GameObject target)
@@ -36,16 +44,6 @@ namespace Spaceships.Entities.Combat
             pierce--;
             if (pierce == 0)
                 Destroy(gameObject);
-        }
-
-        private void OnCollisionEnter2D(Collision2D col)
-        {
-            TryHit(col.gameObject);
-        }
-
-        private void OnTriggerEnter2D(Collider2D col)
-        {
-            TryHit(col.gameObject);
         }
     }
 }
