@@ -6,6 +6,7 @@ namespace Spaceships.Entities
     public class ShipFactory : MonoBehaviour
     {
         public static Dictionary<string, Ship> shipData;
+        public static List<Ship> allShips = new List<Ship>();
 
         [SerializeField] private Ship[] ships;
 
@@ -25,6 +26,8 @@ namespace Spaceships.Entities
                 Debug.LogError("No such ship ID: " + shipID);
 
             Ship newShip = Instantiate(ship, position, rotation);
+            allShips.Add(newShip);
+            newShip.OnDie.AddListener(() => allShips.Remove(newShip));
             return newShip;
         }
 

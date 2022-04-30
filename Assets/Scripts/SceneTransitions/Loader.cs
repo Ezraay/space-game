@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Spaceships.Entities;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 
 namespace Spaceships.SceneTransitions
@@ -13,6 +14,7 @@ namespace Spaceships.SceneTransitions
         public static void LoadSpace()
         {
             SceneManager.LoadScene("Space");
+            ShipFactory.allShips.Clear(); // TODO: Needs to go somewhere more appropriate :(
         }
     }
 }

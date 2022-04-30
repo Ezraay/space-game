@@ -29,6 +29,7 @@ namespace Spaceships.Environment
             LoadLevel(levelToLoad);
             if (SpaceData.playerShipID == null)
                 SpaceData.playerShipID = testingShip.ID;// is for testing
+            Debug.Log(SpaceData.playerShipID);
             currentLevel.SpawnPlayer(SpaceData.playerShipID); 
         }
 

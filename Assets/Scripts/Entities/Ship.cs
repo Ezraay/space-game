@@ -30,6 +30,7 @@ namespace Spaceships.Entities
         private ShipTrail[] trails;
         public ShipData ShipData => shipData;
         public override float MaxHealth => shipData.MaxHealth;
+        public override string Name => shipData.Name;
 
         protected override void Start()
         {
@@ -84,7 +85,10 @@ namespace Spaceships.Entities
             Destroy(gameObject, 3);
 
             if (onWarp != null)
+            {
                 onWarp.Invoke();
+                OnDie.Invoke();
+            }
         }
 
         private void UpdateVelocity()

@@ -8,13 +8,17 @@ namespace Spaceships.Entities.Combat
     {
         public UnityEvent OnTakeDamage { get; } = new UnityEvent();
         public UnityEvent OnDie { get; } = new UnityEvent();
+
+        public UnityEvent OnHealthChange { get; } = new UnityEvent();
         public float Health { get; private set; }
 
         public abstract float MaxHealth { get; }
+        public abstract string Name { get; }
 
         protected virtual void Start()
         {
             Health = MaxHealth;
+            OnHealthChange.Invoke();
         }
 
         public virtual void TakeDamage(float amount)
@@ -22,6 +26,7 @@ namespace Spaceships.Entities.Combat
             Health -= amount;
             Health = Mathf.Max(0, Health);
             OnTakeDamage.Invoke();
+            OnHealthChange.Invoke();
             if (Health == 0)
                 Die();
         }

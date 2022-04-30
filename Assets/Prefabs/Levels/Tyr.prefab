@@ -51,8 +51,8 @@ MonoBehaviour:
   shipsToSpawn:
   - {fileID: 11400000, guid: ff692531e7ab305439e2b8495f858ede, type: 2}
   - {fileID: 11400000, guid: f72b6429480e9244fbabca3339cc859c, type: 2}
-  minSpawnCooldown: 3
-  maxSpawnCooldown: 20
+  minSpawnCooldown: 0.5
+  maxSpawnCooldown: 3
   randomShipPersonality: {fileID: 11400000, guid: fc621a9573dd79e48b4688059163f873, type: 2}
   name: Tyr
 --- !u!58 &773194782902705654
