@@ -6,7 +6,7 @@ using UnityEngine.Events;
 namespace Spaceships.Entities
 {
     [RequireComponent(typeof(Rigidbody2D))]
-    public class Ship : MonoBehaviour
+    public class Ship : Damageable
     {
         [HideInInspector] public UnityEvent onWarp = new UnityEvent();
         [HideInInspector] public UnityEvent onShoot = new UnityEvent();
@@ -29,9 +29,12 @@ namespace Spaceships.Entities
 
         private ShipTrail[] trails;
         public ShipData ShipData => shipData;
+        public override float MaxHealth => shipData.MaxHealth;
 
-        protected virtual void Start()
+        protected override void Start()
         {
+            base.Start();
+            
             rigidbody = GetComponent<Rigidbody2D>();
             trails = GetComponentsInChildren<ShipTrail>();
             model = transform.GetChild(0);
@@ -67,10 +70,11 @@ namespace Spaceships.Entities
             {
                 Vector2 difference = InputController.mouseWorldPosition - (Vector2) gunLocations[shotNumber].position;
                 float angle = Mathf.Atan2(difference.x, -difference.y) * Mathf.Rad2Deg;
-                Quaternion rotation = Quaternion.Euler(0, 0, angle);
-                Projectile newProjectile = Instantiate(shipData.Projectile, gunLocations[shotNumber].position, rotation);
-                newProjectile.creator = this;
-    
+                // Quaternion rotation = Quaternion.Euler(0, 0, angle);
+                Projectile newProjectile =
+                    Instantiate(shipData.Projectile, gunLocations[shotNumber].position, Quaternion.identity);
+                newProjectile.Setup(shipData.DamagePerShot, this, angle, shipData.Pierce);
+
                 shotNumber = ++shotNumber % gunLocations.Count;
             }
         }

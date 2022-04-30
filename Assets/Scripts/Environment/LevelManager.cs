@@ -26,7 +26,7 @@ namespace Spaceships.Environment
             }
 
             LoadLevel(levelToLoad);
-            currentLevel.SpawnPlayer(SpaceData.playerShipID);
+            currentLevel.SpawnPlayer(SpaceData.playerShipID ?? "spitfire"); // ?? spitfire is for testing
         }
 
         private void UnloadLevel()

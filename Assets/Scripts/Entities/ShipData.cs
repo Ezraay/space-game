@@ -22,7 +22,10 @@ namespace Spaceships.Entities
         [BoxGroup("Combat")] [SerializeField] [Min(0)] private float shotCooldown = 0.4f; // For each shot
         [BoxGroup("Combat")] [SerializeField] private Projectile projectile;
         [BoxGroup("Combat")] [SerializeField] [Min(1)] private int shotsPerClick = 1;
-
+        [BoxGroup("Combat")] [SerializeField] [Min(0)] private float maxHealth = 10;
+        [BoxGroup("Combat")] [SerializeField] [Min(0)] private float damagePerShot = 1;
+        [BoxGroup("Combat")] [SerializeField] [Min(1)] private int pierce = 1;
+        
         [BoxGroup("Item")] [SerializeField] [Min(0)] private int creditCost = 1000;
         [BoxGroup("Item")] [SerializeField] [Range(1, 10)] private int tier = 1;
         [BoxGroup("Item")] [SerializeField] private Sprite sprite;
@@ -41,6 +44,9 @@ namespace Spaceships.Entities
 
         public float ShotCooldown => shotCooldown;
         public int ShotsPerClick => shotsPerClick;
+        public float MaxHealth => maxHealth;
+        public float DamagePerShot => damagePerShot;
+        public int Pierce => pierce;
         public Projectile Projectile => projectile;
 
         public int CreditCost => creditCost;
