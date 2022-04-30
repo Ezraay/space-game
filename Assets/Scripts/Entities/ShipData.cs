@@ -19,8 +19,9 @@ namespace Spaceships.Entities
         [BoxGroup("Movement")] [SerializeField] private float tiltAmount = 45;
 
 
-        [BoxGroup("Combat")] [SerializeField] [Min(0)] private float shotCooldown = 0.4f;
+        [BoxGroup("Combat")] [SerializeField] [Min(0)] private float shotCooldown = 0.4f; // For each shot
         [BoxGroup("Combat")] [SerializeField] private Projectile projectile;
+        [BoxGroup("Combat")] [SerializeField] [Min(1)] private int shotsPerClick = 1;
 
         [BoxGroup("Item")] [SerializeField] [Min(0)] private int creditCost = 1000;
         [BoxGroup("Item")] [SerializeField] [Range(1, 10)] private int tier = 1;
@@ -39,6 +40,7 @@ namespace Spaceships.Entities
         public float TiltAmount => tiltAmount;
 
         public float ShotCooldown => shotCooldown;
+        public int ShotsPerClick => shotsPerClick;
         public Projectile Projectile => projectile;
 
         public int CreditCost => creditCost;

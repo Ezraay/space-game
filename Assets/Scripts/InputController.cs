@@ -10,6 +10,7 @@ namespace Spaceships
         public static float zoomInput;
         public static bool shootInput;
         public static bool interactInput;
+        public static Vector2 mouseWorldPosition;
 
         private void Update()
         {
@@ -19,6 +20,7 @@ namespace Spaceships
             zoomInput = -Input.mouseScrollDelta.y;
             shootInput = Input.GetMouseButton(0);
             interactInput = Input.GetKeyDown(KeyCode.F);
+            mouseWorldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         }
     }
 }

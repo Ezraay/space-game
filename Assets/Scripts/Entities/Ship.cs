@@ -62,12 +62,17 @@ namespace Spaceships.Entities
         {
             if (shotCooldown > 0)
                 return;
-            shotCooldown = shipData.ShotCooldown;
-            Projectile newProjectile = Instantiate(shipData.Projectile, gunLocations[shotNumber].position,
-                gunLocations[shotNumber].rotation);
-            newProjectile.creator = this;
-
-            shotNumber = ++shotNumber % gunLocations.Count;
+            shotCooldown = shipData.ShotCooldown * shipData.ShotsPerClick;
+            for (int i = 0; i < shipData.ShotsPerClick; i++)
+            {
+                Vector2 difference = InputController.mouseWorldPosition - (Vector2) gunLocations[shotNumber].position;
+                float angle = Mathf.Atan2(difference.x, -difference.y) * Mathf.Rad2Deg;
+                Quaternion rotation = Quaternion.Euler(0, 0, angle);
+                Projectile newProjectile = Instantiate(shipData.Projectile, gunLocations[shotNumber].position, rotation);
+                newProjectile.creator = this;
+    
+                shotNumber = ++shotNumber % gunLocations.Count;
+            }
         }
 
         public void Warp()
@@ -120,7 +125,7 @@ namespace Spaceships.Entities
             transform.Rotate(Vector3.back * rotationVelocity * Time.fixedDeltaTime * Mathf.Sign(forwardVelocity));
             float strafeVelocity = strafeInput * shipData.StrafeSpeed;
             Vector2 velocity = new Vector2(strafeVelocity, forwardVelocity);
-            
+
             rigidbody.velocity = transform.rotation * velocity;
         }
     }

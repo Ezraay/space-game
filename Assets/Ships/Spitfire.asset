@@ -21,8 +21,9 @@ MonoBehaviour:
   acceleration: 40
   rotateAcceleration: 360
   tiltAmount: 25
-  shotCooldown: 0.1
+  shotCooldown: 0.3
   projectile: {fileID: 4548026034678658014, guid: 48cac5bc6b4960445a1f0865043f90f0, type: 3}
+  shotsPerClick: 1
   creditCost: 1000
   tier: 3
   sprite: {fileID: 21300000, guid: e63e0498284944b47a35c0dcf291fbed, type: 3}
