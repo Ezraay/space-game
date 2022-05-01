@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using Spaceships.Entities;
+using Spaceships.Entities.Combat;
 using Spaceships.SceneTransitions;
 using UnityEngine;
 
@@ -10,6 +11,7 @@ namespace Spaceships.Environment
         [SerializeField] private Level[] levels;
         [SerializeField] private string levelToLoad = "New Level";
         [SerializeField] private ShipData testingShip;
+        [SerializeField] private Standing playerStanding;
 
         private Level currentLevel;
         private readonly Dictionary<string, Level> levelData = new Dictionary<string, Level>();
@@ -27,10 +29,9 @@ namespace Spaceships.Environment
             }
 
             LoadLevel(levelToLoad);
-            if (SpaceData.playerShipID == null)
-                SpaceData.playerShipID = testingShip.ID;// is for testing
+            SpaceData.playerShipID ??= testingShip.ID;
             Debug.Log(SpaceData.playerShipID);
-            currentLevel.SpawnPlayer(SpaceData.playerShipID); 
+            currentLevel.SpawnPlayer(SpaceData.playerShipID, playerStanding); 
         }
 
         private void UnloadLevel()

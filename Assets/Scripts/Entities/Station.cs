@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using Spaceships.Entities.AI;
+using Spaceships.Entities.Combat;
 using Spaceships.Environment;
 using Spaceships.SceneTransitions;
 using UnityEngine;
@@ -14,6 +15,7 @@ namespace Spaceships.Entities
         [SerializeField] private float minSpawnCooldown = 3;
         [SerializeField] private float maxSpawnCooldown = 20;
         [SerializeField] private AIPersonality randomShipPersonality;
+        [SerializeField] private Standing randomShipStanding;
         [SerializeField] private new string name = "New Station";
 
         private float spawnCooldown;
@@ -42,17 +44,17 @@ namespace Spaceships.Entities
             // Creates a random AI ship
             spawnCooldown = Random.Range(minSpawnCooldown, maxSpawnCooldown);
             ShipData shipData = shipsToSpawn[Random.Range(0, shipsToSpawn.Length)];
-            Ship newShip = SummonShip(shipData.ID);
+            Ship newShip = SummonShip(shipData.ID, randomShipStanding);
             ShipAI shipAI = newShip.gameObject.AddComponent<ShipAI>();
             shipAI.personality = randomShipPersonality;
             shipAI.Setup();
         }
 
-        public Ship SummonShip(string shipID)
+        public Ship SummonShip(string shipID, Standing standing)
         {
             // Summons a ship and returns it
             Transform spawn = spawns[Random.Range(0, spawns.Count)];
-            Ship ship = ShipFactory.SpawnShip(shipID, spawn.position, spawn.rotation);
+            Ship ship = ShipFactory.SpawnShip(shipID, standing, spawn.position, spawn.rotation);
             ship.forwardVelocity = ship.ShipData.ForwardSpeed;
             return ship;
         }

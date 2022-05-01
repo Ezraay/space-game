@@ -28,6 +28,7 @@ namespace Spaceships.Entities
         private int shotNumber;
 
         private ShipTrail[] trails;
+        public Standing Standing { get; private set; }
         public ShipData ShipData => shipData;
         public override float MaxHealth => shipData.MaxHealth;
         public override string Name => shipData.Name;
@@ -56,6 +57,11 @@ namespace Spaceships.Entities
             shotCooldown = Mathf.Max(0, shotCooldown - Time.deltaTime);
         }
 
+        public void Setup(Standing standing)
+        {
+            Standing = standing;
+        }
+
         protected virtual void FixedUpdate()
         {
             UpdateVelocity();
@@ -71,7 +77,6 @@ namespace Spaceships.Entities
             {
                 Vector2 difference = InputController.mouseWorldPosition - (Vector2) gunLocations[shotNumber].position;
                 float angle = Mathf.Atan2(difference.x, -difference.y) * Mathf.Rad2Deg;
-                // Quaternion rotation = Quaternion.Euler(0, 0, angle);
                 Projectile newProjectile =
                     Instantiate(shipData.Projectile, gunLocations[shotNumber].position, Quaternion.identity);
                 newProjectile.Setup(shipData.DamagePerShot, this, angle, shipData.Pierce);

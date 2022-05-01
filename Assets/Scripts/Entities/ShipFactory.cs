@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Spaceships.Entities.Combat;
 using UnityEngine;
 
 namespace Spaceships.Entities
@@ -19,13 +20,15 @@ namespace Spaceships.Entities
             }
         }
 
-        public static Ship SpawnShip(string shipID, Vector3 position, Quaternion rotation)
+        public static Ship SpawnShip(string shipID, Standing standing, Vector3 position, Quaternion rotation)
         {
             shipData.TryGetValue(shipID, out Ship ship);
             if (ship == null)
                 Debug.LogError("No such ship ID: " + shipID);
 
             Ship newShip = Instantiate(ship, position, rotation);
+            newShip.Setup(standing);
+            
             allShips.Add(newShip);
             newShip.OnDie.AddListener(() => allShips.Remove(newShip));
             return newShip;

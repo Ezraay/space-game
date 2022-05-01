@@ -1,4 +1,5 @@
 ﻿using Spaceships.Entities;
+using Spaceships.Entities.Combat;
 using UnityEngine;
 
 namespace Spaceships.Environment
@@ -11,10 +12,10 @@ namespace Spaceships.Environment
         public string Name => name;
 
 
-        public void SpawnPlayer(string shipID)
+        public void SpawnPlayer(string shipID, Standing playerStanding)
         {
             // Spawns the player in the current level
-            Ship spawnedShip = mainStation.SummonShip(shipID);
+            Ship spawnedShip = mainStation.SummonShip(shipID, playerStanding);
             Player.ship = spawnedShip;
         }
     }
