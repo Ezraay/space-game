@@ -6,48 +6,51 @@ namespace Spaceships.Entities.AI
     [RequireComponent(typeof(Ship))]
     public class ShipAI : MonoBehaviour
     {
-        public AIPersonality personality;
-        public Dictionary<string, object> data; // Data used by behaviours for persistance
+        private AIPersonality personality;
         private Ship ship;
-
-        private void Start()
-        {
-            if (personality != null)
-                Setup();
-        }
 
         private void Update()
         {
-            float highestWeight = 0;
-            AIBehaviour highestBehaviour = null;
-            foreach (AIPersonality.WeightedBehaviour behaviour in personality.WeightedBehaviours)
+            foreach (AIDataBehaviour behaviour in personality.DataBehaviours)
             {
-                float weight = behaviour.weight * behaviour.behaviour.GetWeight(ship, this);
+                behaviour.Tick();
+            }
+            
+            float highestWeight = 0;
+            List<AIBehaviour> highestBehaviours = new List<AIBehaviour>();
+            foreach (AIBehaviour behaviour in personality.Behaviours)
+            {
+                float weight = behaviour.Weight;
                 if (weight > highestWeight)
                 {
-                    highestBehaviour = behaviour.behaviour;
+                    highestBehaviours.Clear();
                     highestWeight = weight;
                 }
+                if (highestWeight == weight)
+                    highestBehaviours.Add(behaviour);
             }
 
-            if (highestBehaviour != null)
-                highestBehaviour.Tick(ship, this);
+            
+            if (highestWeight > 0)
+                foreach (AIBehaviour behaviour in highestBehaviours)
+                    behaviour.Tick();
+            
         }
 
-        public void Setup()
+        public void Setup(AIPersonality personalityPrefab)
         {
+            personality = Instantiate(personalityPrefab, transform);
             ship = GetComponent<Ship>();
-            data = new Dictionary<string, object>();
-            foreach (AIPersonality.WeightedBehaviour weightedBehaviour in personality.WeightedBehaviours)
+
+            foreach (AIDataBehaviour dataBehaviour in personality.DataBehaviours)
             {
-                weightedBehaviour.behaviour.Setup(ship, this);
+                dataBehaviour.Setup(ship, this);
             }
-        }
-
-        public void Setup(AIPersonality personality)
-        {
-            ship = GetComponent<Ship>();
-            this.personality = personality;
+            
+            foreach (AIBehaviour behaviour in personality.Behaviours)
+            {
+                behaviour.Setup(ship, this);
+            }
         }
     }
 }

@@ -21,7 +21,7 @@ namespace Spaceships.Entities
             ship.strafeInput = InputController.strafeInput;
             ship.rotationInput = InputController.rotationInput;
             if (InputController.shootInput)
-                ship.Shoot();
+                ship.Shoot(InputController.mouseWorldPosition);
 
             Collider2D[] interactables =
                 Physics2D.OverlapCircleAll(ship.transform.position, interactRadius, interactMask);

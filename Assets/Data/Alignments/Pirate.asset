@@ -15,7 +15,7 @@ MonoBehaviour:
   name: Pirate
   color: {r: 1, g: 0, b: 0, a: 1}
   relationships:
-  - alignment: {fileID: 11400000, guid: fba394cb6096c444aac2defaf4cc2bcf, type: 2}
+  - standing: {fileID: 11400000, guid: fba394cb6096c444aac2defaf4cc2bcf, type: 2}
     relationship: 0
-  - alignment: {fileID: 11400000, guid: cf504a7220041c74d910031ed290f1ed, type: 2}
+  - standing: {fileID: 11400000, guid: cf504a7220041c74d910031ed290f1ed, type: 2}
     relationship: 0

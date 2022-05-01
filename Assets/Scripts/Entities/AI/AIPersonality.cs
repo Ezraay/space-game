@@ -1,19 +1,18 @@
 ﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Spaceships.Entities.AI
 {
-    [CreateAssetMenu(menuName = "AI/Personality", fileName = "New Personality", order = 0)]
-    public class AIPersonality : ScriptableObject
+    public class AIPersonality : MonoBehaviour
     {
-        [SerializeField] private WeightedBehaviour[] weightedBehaviours;
-        public WeightedBehaviour[] WeightedBehaviours => weightedBehaviours;
+        public AIBehaviour[] Behaviours { get; private set; }
+        public AIDataBehaviour[] DataBehaviours { get; private set; }
 
-        [Serializable]
-        public struct WeightedBehaviour
+        private void Awake()
         {
-            public AIBehaviour behaviour;
-            public float weight;
+            Behaviours = GetComponents<AIBehaviour>();
+            DataBehaviours = GetComponents<AIDataBehaviour>();
         }
     }
 }

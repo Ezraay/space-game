@@ -237,6 +237,63 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 5784611567120899653, guid: 864b86fb7f745d046a9605a88a48a2cc, type: 3}
   m_PrefabInstance: {fileID: 82530679}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &219912161
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 219912162}
+  - component: {fileID: 219912163}
+  m_Layer: 0
+  m_Name: Enemy Spawn Point
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &219912162
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 219912161}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 93, y: 123, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &219912163
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 219912161}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43189dfe2032b594eaf73159d952f094, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  personality: {fileID: -8811996589724289028, guid: 9913561ab24713e4d992f75a05595a5c, type: 3}
+  ship: {fileID: 11400000, guid: ff692531e7ab305439e2b8495f858ede, type: 2}
+  standing: {fileID: 11400000, guid: 34f998ab30d4e334397ffe16ca366776, type: 2}
+--- !u!114 &440050196 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2773526314993516986, guid: ccc6fa4985cc06642aae70588d0caef5, type: 3}
+  m_PrefabInstance: {fileID: 1679689808}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &461008364
 GameObject:
   m_ObjectHideFlags: 0
@@ -467,6 +524,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &528925594 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2773526314879111172, guid: ccc6fa4985cc06642aae70588d0caef5, type: 3}
+  m_PrefabInstance: {fileID: 1679689808}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &647277304
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -701,7 +769,7 @@ MonoBehaviour:
   - {fileID: 2503074881655489380, guid: 3d9114e0f02351e468cd94c95749c44d, type: 3}
   levelToLoad: Tyr
   testingShip: {fileID: 11400000, guid: f72b6429480e9244fbabca3339cc859c, type: 2}
-  playerStanding: {fileID: 0}
+  playerStanding: {fileID: 11400000, guid: fba394cb6096c444aac2defaf4cc2bcf, type: 2}
 --- !u!4 &1416582778
 Transform:
   m_ObjectHideFlags: 0
@@ -774,6 +842,9 @@ MonoBehaviour:
   content: {fileID: 1779355384}
   healthSlider: {fileID: 1779355386}
   damageableText: {fileID: 1963403475}
+  fillImage: {fileID: 528925594}
+  borderImage: {fileID: 440050196}
+  noStandingColour: {r: 0.5, g: 0.5, b: 0.5, a: 1}
 --- !u!1001 &1679689808
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1103,7 +1174,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.7028302, g: 0.8496671, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1663,6 +1734,10 @@ PrefabInstance:
       propertyPath: randomShipAlignment
       value: 
       objectReference: {fileID: 11400000, guid: cf504a7220041c74d910031ed290f1ed, type: 2}
+    - target: {fileID: 90947208702492039, guid: 3d9114e0f02351e468cd94c95749c44d, type: 3}
+      propertyPath: randomShipPersonality
+      value: 
+      objectReference: {fileID: -8811996589724289028, guid: 95d92fc65d40de346a4da47f31f7393e, type: 3}
     - target: {fileID: 2503074881655489379, guid: 3d9114e0f02351e468cd94c95749c44d, type: 3}
       propertyPath: m_RootOrder
       value: 6

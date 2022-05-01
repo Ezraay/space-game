@@ -3,37 +3,36 @@ using UnityEngine.Events;
 
 namespace Spaceships.Entities.AI.Behaviours
 {
-    [CreateAssetMenu(menuName = "AI/Behaviour/Move Point", fileName = "MovePointBehaviour", order = 0)]
     public class MovePointBehaviour : AIBehaviour
     {
         private const float StoppingDistance = 0.1f;
+        [HideInInspector] public Vector2 target;
+        public bool Reached { get; private set; } = true;
+        public UnityEvent OnReached { get; } = new UnityEvent();
 
-        public override float GetWeight(Ship ship, ShipAI shipAI)
+
+        protected override float GetUtility()
         {
-            return shipAI.data.ContainsKey("movePoint") ? 1 : 0;
+            return Reached ? 0 : 1;
         }
 
-        public override void Setup(Ship ship, ShipAI shipAI)
+        public override void Tick()
         {
-            shipAI.data.Add("onMovePointReached", new UnityEvent());
-        }
-
-        public override void Tick(Ship ship, ShipAI shipAI)
-        {
-            Vector2 point = GetTarget(ship, shipAI);
-            Vector3 inputs = GetInputs(ship, shipAI, point);
+            if (Reached) return;
+            
+            Vector3 inputs = GetInputs();
             ship.rotationInput = inputs.x;
             ship.thrustInput = inputs.y;
             ship.strafeInput = inputs.z;
         }
 
-        protected virtual Vector2 GetTarget(Ship ship, ShipAI shipAI)
+        public void SetTarget(Vector2 position)
         {
-            Vector2 point = (Vector2) shipAI.data["movePoint"];
-            return point;
+            Reached = false;
+            target = position;
         }
 
-        protected virtual Vector3 GetInputs(Ship ship, ShipAI shipAI, Vector2 target)
+        protected virtual Vector3 GetInputs()
         {
             // x is rotate, y is forward thrust, z is strafe
             Vector3 result = new Vector3();
@@ -43,9 +42,9 @@ namespace Spaceships.Entities.AI.Behaviours
             if (distanceToTarget < StoppingDistance)
             {
                 // Reached destination
-                shipAI.data.Remove("movePoint");
                 ship.thrustInput = 0;
-                ((UnityEvent) shipAI.data["onMovePointReached"]).Invoke();
+                Reached = true;
+                OnReached.Invoke();
                 return Vector3.zero;
             }
 

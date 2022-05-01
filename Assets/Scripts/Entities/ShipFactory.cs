@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Spaceships.Entities.AI;
 using Spaceships.Entities.Combat;
 using UnityEngine;
 
@@ -34,6 +35,14 @@ namespace Spaceships.Entities
             return newShip;
         }
 
+        public static Ship SpawnAIShip(string shipID, Standing standing,AIPersonality personality,  Vector3 position, Quaternion rotation)
+        {
+            Ship ship = SpawnShip(shipID, standing, position, rotation);
+            ShipAI shipAI = ship.gameObject.AddComponent<ShipAI>();
+            shipAI.Setup(personality);
+            return ship;
+        }
+        
         public static GameObject SpawnShipModel(string shipID, Vector3 position, Quaternion rotation)
         {
             shipData.TryGetValue(shipID, out Ship ship);

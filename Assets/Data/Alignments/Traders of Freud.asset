@@ -15,7 +15,7 @@ MonoBehaviour:
   name: Traders of Freud
   color: {r: 0, g: 1, b: 0, a: 1}
   relationships:
-  - alignment: {fileID: 11400000, guid: fba394cb6096c444aac2defaf4cc2bcf, type: 2}
+  - standing: {fileID: 11400000, guid: fba394cb6096c444aac2defaf4cc2bcf, type: 2}
     relationship: 50
-  - alignment: {fileID: 11400000, guid: 34f998ab30d4e334397ffe16ca366776, type: 2}
+  - standing: {fileID: 11400000, guid: 34f998ab30d4e334397ffe16ca366776, type: 2}
     relationship: 0

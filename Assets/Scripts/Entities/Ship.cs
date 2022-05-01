@@ -68,14 +68,14 @@ namespace Spaceships.Entities
             UpdatePosition();
         }
 
-        public void Shoot()
+        public void Shoot(Vector2 target)
         {
             if (shotCooldown > 0)
                 return;
             shotCooldown = shipData.ShotCooldown * shipData.ShotsPerClick;
             for (int i = 0; i < shipData.ShotsPerClick; i++)
             {
-                Vector2 difference = InputController.mouseWorldPosition - (Vector2) gunLocations[shotNumber].position;
+                Vector2 difference = target - (Vector2) gunLocations[shotNumber].position;
                 float angle = Mathf.Atan2(difference.x, -difference.y) * Mathf.Rad2Deg;
                 Projectile newProjectile =
                     Instantiate(shipData.Projectile, gunLocations[shotNumber].position, Quaternion.identity);

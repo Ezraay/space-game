@@ -46,8 +46,7 @@ namespace Spaceships.Entities
             ShipData shipData = shipsToSpawn[Random.Range(0, shipsToSpawn.Length)];
             Ship newShip = SummonShip(shipData.ID, randomShipStanding);
             ShipAI shipAI = newShip.gameObject.AddComponent<ShipAI>();
-            shipAI.personality = randomShipPersonality;
-            shipAI.Setup();
+            shipAI.Setup(randomShipPersonality);
         }
 
         public Ship SummonShip(string shipID, Standing standing)

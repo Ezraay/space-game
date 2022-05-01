@@ -53,7 +53,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: f72b6429480e9244fbabca3339cc859c, type: 2}
   minSpawnCooldown: 0.5
   maxSpawnCooldown: 3
-  randomShipPersonality: {fileID: 11400000, guid: fc621a9573dd79e48b4688059163f873, type: 2}
+  randomShipPersonality: {fileID: -8811996589724289028, guid: 95d92fc65d40de346a4da47f31f7393e, type: 3}
+  randomShipStanding: {fileID: 11400000, guid: cf504a7220041c74d910031ed290f1ed, type: 2}
   name: Tyr
 --- !u!58 &773194782902705654
 CircleCollider2D:

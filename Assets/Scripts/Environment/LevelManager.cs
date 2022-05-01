@@ -30,7 +30,6 @@ namespace Spaceships.Environment
 
             LoadLevel(levelToLoad);
             SpaceData.playerShipID ??= testingShip.ID;
-            Debug.Log(SpaceData.playerShipID);
             currentLevel.SpawnPlayer(SpaceData.playerShipID, playerStanding); 
         }
 
