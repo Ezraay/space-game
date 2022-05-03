@@ -2,6 +2,7 @@ using System;
 using System.IO;
 using System.Threading.Tasks;
 using MHLab.Patch.Core.Client;
+using MHLab.Patch.Core.Client.Advanced.IO;
 using MHLab.Patch.Core.Client.IO;
 using MHLab.Patch.Core.IO;
 using MHLab.Patch.Core.Logging;
@@ -50,6 +51,8 @@ namespace MHLab.Patch.Launcher.Scripts
             progress.ProgressChanged.AddListener(Data.UpdateProgressChanged);
 
             var context = new UpdatingContext(settings, progress);
+            // context.Downloader = new SmartDownloader(context);
+            // context.Downloader.DownloadComplete += DownloadComplete;
             context.Logger = new SimpleLogger(context.FileSystem, settings.GetLogsFilePath(), settings.DebugMode);
             context.Serializer = new JsonSerializer();
             context.LocalizedMessages = new EnglishUpdaterLocalizedMessages();
@@ -60,6 +63,7 @@ namespace MHLab.Patch.Launcher.Scripts
         private void Initialize(ILauncherSettings settings)
         {
             Context = CreateContext(settings);
+            
 
             if (Data.SoftwareVersion != null)
             {

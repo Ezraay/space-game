@@ -2,6 +2,7 @@ using System;
 using System.IO;
 using MHLab.Patch.Core;
 using MHLab.Patch.Core.Client;
+using MHLab.Patch.Core.Client.Advanced.IO;
 using MHLab.Patch.Core.Client.Advanced.IO.Chunked;
 using MHLab.Patch.Core.Client.IO;
 using MHLab.Patch.Core.IO;
@@ -25,7 +26,7 @@ namespace MHLab.Patch.Launcher.Scripts
                 originalSettings.PatcherUpdaterSafeMode = settingsOverride.PatcherUpdaterSafeMode;
             });
 
-            context.Downloader                  =  new ChunkedDownloader(context);
+            context.Downloader                  =  new SmartDownloader(context);
             context.Downloader.DownloadComplete += Data.DownloadComplete;
             
             NetworkChecker = new NetworkChecker();

@@ -135,11 +135,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41e0c81bd484498eaa6f04bb77af227d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RemoteUrl: http://localhost/patch
-  LauncherExecutableName: MHLab.Patch.exe
-  GameExecutableName: YourGame.exe
+  RemoteUrl: https://raw.githubusercontent.com/Ezraay/space-game/master/PATCHWorkspace
+  LauncherExecutableName: Ceres Launcher.exe
+  GameExecutableName: Ceres.exe
   LaunchAnywayOnError: 0
-  DebugMode: 0
+  DebugMode: 1
   Dispatcher: {fileID: 1744635116}
   ProgressBar: {fileID: 2071246689}
   DownloadSpeed: {fileID: 2071246688}
