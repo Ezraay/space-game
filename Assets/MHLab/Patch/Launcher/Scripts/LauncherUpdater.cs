@@ -6,6 +6,7 @@ using MHLab.Patch.Core.Client.Advanced.IO.Chunked;
 using MHLab.Patch.Core.Client.IO;
 using MHLab.Patch.Core.IO;
 using MHLab.Patch.Launcher.Scripts.Utilities;
+using NaughtyAttributes;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -13,7 +14,7 @@ namespace MHLab.Patch.Launcher.Scripts
 {
     public sealed class LauncherUpdater : LauncherBase
     {
-        public int SceneToLoad;
+        [Scene] public int SceneToLoad;
         
         private PatcherUpdater _patcherUpdater;
         
