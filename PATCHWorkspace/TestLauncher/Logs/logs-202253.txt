@@ -36,3 +36,141 @@ One or more errors occurred.
   at MHLab.Patch.Core.Client.Runners.UpdateRunner.Update () [0x0001d] in C:\Users\Valeriy\Documents\Projects\Space Game\Assets\MHLab\Patch\Launcher\Scripts\Core\Runners\UpdateRunner.cs:23 
   at MHLab.Patch.Core.Client.UpdatingContext.Update () [0x00000] in C:\Users\Valeriy\Documents\Projects\Space Game\Assets\MHLab\Patch\Launcher\Scripts\Core\UpdatingContext.cs:142 
   at MHLab.Patch.Launcher.Scripts.LauncherBase.CheckForUpdates () [0x00006] in C:\Users\Valeriy\Documents\Projects\Space Game\Assets\MHLab\Patch\Launcher\Scripts\LauncherBase.cs:211 
+[5/3/2022 10:09:50 AM] [INF] [LauncherBase.cs::StartUpdateProcess@126] ===> [Launcher updating] process STARTED! <===
+[5/3/2022 10:09:50 AM] [INF] [UpdatingContext.cs::Initialize@74] Update context initializing...
+[5/3/2022 10:09:50 AM] [INF] [UpdatingContext.cs::Initialize@75] Software version: 2.6.2
+[5/3/2022 10:09:50 AM] [INF] [UpdatingContext.cs::Initialize@76] Update context points to https://raw.githubusercontent.com/Ezraay/space-game/master/PATCHWorkspace
+[5/3/2022 10:09:50 AM] [DBG] [UpdatingContext.cs::Initialize@77] ===> Debug Mode: ENABLED <===
+[5/3/2022 10:09:50 AM] [INF] [UpdatingContext.cs::SetCurrentVersion@161] Retrieved current version: 0.1.1
+[5/3/2022 10:09:50 AM] [INF] [UpdatingContext.cs::Initialize@84] Workspace cleaned. Removed 0 files
+[5/3/2022 10:09:50 AM] [WRN] [UpdatingContext.cs::GetPatchesIndex@268] No patches index found on the remote server. The Update process will be skipped.
+[5/3/2022 10:09:50 AM] [INF] [UpdatingContext.cs::GetLocalFiles@280] Collected information on 84 local files.
+[5/3/2022 10:09:50 AM] [INF] [UpdatingContext.cs::GetBuildDefinition@308] Retrieved definition for 0.1.1
+[5/3/2022 10:09:50 AM] [INF] [UpdatingContext.cs::GetPatchesShortestPath@367] Found 0 applicable updates.
+[5/3/2022 10:09:50 AM] [INF] [UpdatingContext.cs::Initialize@91] Update context completed initialization.
+[5/3/2022 10:09:50 AM] [INF] [PatcherUpdater.cs::Update@37] Launcher update started. The update contains 157 operations.
+[5/3/2022 10:09:53 AM] [ERR] [LauncherUpdater.cs::UpdateFailed@145] ===> [Launcher updating] process FAILED! <=== - One or more errors occurred. -   at System.Threading.Tasks.Task.WaitAll (System.Threading.Tasks.Task[] tasks, System.Int32 millisecondsTimeout, System.Threading.CancellationToken cancellationToken) [0x001d1] in <695d1cc93cca45069c528c15c9fdd749>:0 
+  at System.Threading.Tasks.Task.WaitAll (System.Threading.Tasks.Task[] tasks, System.Int32 millisecondsTimeout) [0x00000] in <695d1cc93cca45069c528c15c9fdd749>:0 
+  at System.Threading.Tasks.Task.WaitAll (System.Threading.Tasks.Task[] tasks) [0x00000] in <695d1cc93cca45069c528c15c9fdd749>:0 
+  at MHLab.Patch.Core.Client.Advanced.IO.Chunked.ChunkedDownloader.StartJobs (MHLab.Patch.Core.Client.Advanced.IO.Chunked.DownloaderSharedContext sharedContext) [0x00085] in C:\Users\Valeriy\Documents\Projects\Space Game\Assets\MHLab\Patch\Launcher\Scripts\Core\IO\Advanced\Chunked\ChunkedDownloader.cs:58 
+  at MHLab.Patch.Core.Client.Advanced.IO.Chunked.ChunkedDownloader.Download (System.Collections.Generic.List`1[T] entries, System.Action`1[T] onEntryStarted, System.Action`1[T] onChunkDownloaded, System.Action`1[T] onEntryCompleted) [0x00045] in C:\Users\Valeriy\Documents\Projects\Space Game\Assets\MHLab\Patch\Launcher\Scripts\Core\IO\Advanced\Chunked\ChunkedDownloader.IDownloader.cs:77 
+  at MHLab.Patch.Core.Client.Advanced.IO.Chunked.ChunkedDownloader.Download (System.String url, System.String destinationFolder, System.Action`1[T] onChunkDownloaded) [0x00071] in C:\Users\Valeriy\Documents\Projects\Space Game\Assets\MHLab\Patch\Launcher\Scripts\Core\IO\Advanced\Chunked\ChunkedDownloader.IDownloader.cs:106 
+  at MHLab.Patch.Core.Client.PatcherUpdater.HandleAddedFile (MHLab.Patch.Core.UpdaterDefinitionEntry entry) [0x000fd] in C:\Users\Valeriy\Documents\Projects\Space Game\Assets\MHLab\Patch\Launcher\Scripts\Core\PatcherUpdater.cs:447 
+  at MHLab.Patch.Core.Client.PatcherUpdater.HandleUpdate () [0x00068] in C:\Users\Valeriy\Documents\Projects\Space Game\Assets\MHLab\Patch\Launcher\Scripts\Core\PatcherUpdater.cs:87 
+  at MHLab.Patch.Core.Client.PatcherUpdater.Update () [0x000de] in C:\Users\Valeriy\Documents\Projects\Space Game\Assets\MHLab\Patch\Launcher\Scripts\Core\PatcherUpdater.cs:52 
+  at MHLab.Patch.Core.Client.Runners.UpdateRunner.Update () [0x0001d] in C:\Users\Valeriy\Documents\Projects\Space Game\Assets\MHLab\Patch\Launcher\Scripts\Core\Runners\UpdateRunner.cs:23 
+  at MHLab.Patch.Core.Client.UpdatingContext.Update () [0x00000] in C:\Users\Valeriy\Documents\Projects\Space Game\Assets\MHLab\Patch\Launcher\Scripts\Core\UpdatingContext.cs:142 
+  at MHLab.Patch.Launcher.Scripts.LauncherBase.CheckForUpdates () [0x00006] in C:\Users\Valeriy\Documents\Projects\Space Game\Assets\MHLab\Patch\Launcher\Scripts\LauncherBase.cs:211 
+One or more errors occurred.
+  at System.Threading.Tasks.Task.WaitAll (System.Threading.Tasks.Task[] tasks, System.Int32 millisecondsTimeout, System.Threading.CancellationToken cancellationToken) [0x001d1] in <695d1cc93cca45069c528c15c9fdd749>:0 
+  at System.Threading.Tasks.Task.WaitAll (System.Threading.Tasks.Task[] tasks, System.Int32 millisecondsTimeout) [0x00000] in <695d1cc93cca45069c528c15c9fdd749>:0 
+  at System.Threading.Tasks.Task.WaitAll (System.Threading.Tasks.Task[] tasks) [0x00000] in <695d1cc93cca45069c528c15c9fdd749>:0 
+  at MHLab.Patch.Core.Client.Advanced.IO.Chunked.ChunkedDownloader.StartJobs (MHLab.Patch.Core.Client.Advanced.IO.Chunked.DownloaderSharedContext sharedContext) [0x00085] in C:\Users\Valeriy\Documents\Projects\Space Game\Assets\MHLab\Patch\Launcher\Scripts\Core\IO\Advanced\Chunked\ChunkedDownloader.cs:58 
+  at MHLab.Patch.Core.Client.Advanced.IO.Chunked.ChunkedDownloader.Download (System.Collections.Generic.List`1[T] entries, System.Action`1[T] onEntryStarted, System.Action`1[T] onChunkDownloaded, System.Action`1[T] onEntryCompleted) [0x00045] in C:\Users\Valeriy\Documents\Projects\Space Game\Assets\MHLab\Patch\Launcher\Scripts\Core\IO\Advanced\Chunked\ChunkedDownloader.IDownloader.cs:77 
+  at MHLab.Patch.Core.Client.Advanced.IO.Chunked.ChunkedDownloader.Download (System.String url, System.String destinationFolder, System.Action`1[T] onChunkDownloaded) [0x00071] in C:\Users\Valeriy\Documents\Projects\Space Game\Assets\MHLab\Patch\Launcher\Scripts\Core\IO\Advanced\Chunked\ChunkedDownloader.IDownloader.cs:106 
+  at MHLab.Patch.Core.Client.PatcherUpdater.HandleAddedFile (MHLab.Patch.Core.UpdaterDefinitionEntry entry) [0x000fd] in C:\Users\Valeriy\Documents\Projects\Space Game\Assets\MHLab\Patch\Launcher\Scripts\Core\PatcherUpdater.cs:447 
+  at MHLab.Patch.Core.Client.PatcherUpdater.HandleUpdate () [0x00068] in C:\Users\Valeriy\Documents\Projects\Space Game\Assets\MHLab\Patch\Launcher\Scripts\Core\PatcherUpdater.cs:87 
+  at MHLab.Patch.Core.Client.PatcherUpdater.Update () [0x000de] in C:\Users\Valeriy\Documents\Projects\Space Game\Assets\MHLab\Patch\Launcher\Scripts\Core\PatcherUpdater.cs:52 
+  at MHLab.Patch.Core.Client.Runners.UpdateRunner.Update () [0x0001d] in C:\Users\Valeriy\Documents\Projects\Space Game\Assets\MHLab\Patch\Launcher\Scripts\Core\Runners\UpdateRunner.cs:23 
+  at MHLab.Patch.Core.Client.UpdatingContext.Update () [0x00000] in C:\Users\Valeriy\Documents\Projects\Space Game\Assets\MHLab\Patch\Launcher\Scripts\Core\UpdatingContext.cs:142 
+  at MHLab.Patch.Launcher.Scripts.LauncherBase.CheckForUpdates () [0x00006] in C:\Users\Valeriy\Documents\Projects\Space Game\Assets\MHLab\Patch\Launcher\Scripts\LauncherBase.cs:211 
+[5/3/2022 10:10:08 AM] [INF] [LauncherBase.cs::StartUpdateProcess@126] ===> [Game updating] process STARTED! <===
+[5/3/2022 10:10:08 AM] [INF] [UpdatingContext.cs::Initialize@74] Update context initializing...
+[5/3/2022 10:10:08 AM] [INF] [UpdatingContext.cs::Initialize@75] Software version: 2.6.2
+[5/3/2022 10:10:08 AM] [INF] [UpdatingContext.cs::Initialize@76] Update context points to https://raw.githubusercontent.com/Ezraay/space-game/master/PATCHWorkspace
+[5/3/2022 10:10:08 AM] [DBG] [UpdatingContext.cs::Initialize@77] ===> Debug Mode: ENABLED <===
+[5/3/2022 10:10:08 AM] [INF] [UpdatingContext.cs::SetCurrentVersion@161] Retrieved current version: 0.1.1
+[5/3/2022 10:10:08 AM] [INF] [UpdatingContext.cs::Initialize@84] Workspace cleaned. Removed 0 files
+[5/3/2022 10:10:08 AM] [WRN] [UpdatingContext.cs::GetPatchesIndex@268] No patches index found on the remote server. The Update process will be skipped.
+[5/3/2022 10:10:08 AM] [INF] [UpdatingContext.cs::GetLocalFiles@280] Collected information on 84 local files.
+[5/3/2022 10:10:08 AM] [INF] [UpdatingContext.cs::GetBuildDefinition@308] Retrieved definition for 0.1.1
+[5/3/2022 10:10:08 AM] [INF] [UpdatingContext.cs::GetPatchesShortestPath@367] Found 0 applicable updates.
+[5/3/2022 10:10:08 AM] [INF] [UpdatingContext.cs::Initialize@91] Update context completed initialization.
+[5/3/2022 10:10:08 AM] [INF] [Repairer.cs::Update@34] Repairing process started.
+[5/3/2022 10:10:15 AM] [INF] [SmartDownloader.cs::Download@37] Sorted 91 files in [0.0001359s].
+[5/3/2022 10:10:51 AM] [ERR] [Launcher.cs::UpdateFailed@131] ===> [Game updating] process FAILED! <=== - One or more errors occurred. -   at System.Threading.Tasks.Task.WaitAll (System.Threading.Tasks.Task[] tasks, System.Int32 millisecondsTimeout, System.Threading.CancellationToken cancellationToken) [0x001d1] in <695d1cc93cca45069c528c15c9fdd749>:0 
+  at System.Threading.Tasks.Task.WaitAll (System.Threading.Tasks.Task[] tasks, System.Int32 millisecondsTimeout) [0x00000] in <695d1cc93cca45069c528c15c9fdd749>:0 
+  at System.Threading.Tasks.Task.WaitAll (System.Threading.Tasks.Task[] tasks) [0x00000] in <695d1cc93cca45069c528c15c9fdd749>:0 
+  at MHLab.Patch.Core.Client.Advanced.IO.SmartDownloader.Download (System.Collections.Generic.List`1[T] entries, System.Action`1[T] onEntryStarted, System.Action`1[T] onChunkDownloaded, System.Action`1[T] onEntryCompleted) [0x00105] in C:\Users\Valeriy\Documents\Projects\Space Game\Assets\MHLab\Patch\Launcher\Scripts\Core\IO\Advanced\SmartDownloader.cs:94 
+  at MHLab.Patch.Core.Client.Repairer.Update () [0x002ed] in C:\Users\Valeriy\Documents\Projects\Space Game\Assets\MHLab\Patch\Launcher\Scripts\Core\Repairer.cs:109 
+  at MHLab.Patch.Core.Client.Runners.UpdateRunner.Update () [0x0001d] in C:\Users\Valeriy\Documents\Projects\Space Game\Assets\MHLab\Patch\Launcher\Scripts\Core\Runners\UpdateRunner.cs:23 
+  at MHLab.Patch.Core.Client.UpdatingContext.Update () [0x00000] in C:\Users\Valeriy\Documents\Projects\Space Game\Assets\MHLab\Patch\Launcher\Scripts\Core\UpdatingContext.cs:142 
+  at MHLab.Patch.Launcher.Scripts.LauncherBase.CheckForUpdates () [0x00006] in C:\Users\Valeriy\Documents\Projects\Space Game\Assets\MHLab\Patch\Launcher\Scripts\LauncherBase.cs:211 
+One or more errors occurred.
+  at System.Threading.Tasks.Task.WaitAll (System.Threading.Tasks.Task[] tasks, System.Int32 millisecondsTimeout, System.Threading.CancellationToken cancellationToken) [0x001d1] in <695d1cc93cca45069c528c15c9fdd749>:0 
+  at System.Threading.Tasks.Task.WaitAll (System.Threading.Tasks.Task[] tasks, System.Int32 millisecondsTimeout) [0x00000] in <695d1cc93cca45069c528c15c9fdd749>:0 
+  at System.Threading.Tasks.Task.WaitAll (System.Threading.Tasks.Task[] tasks) [0x00000] in <695d1cc93cca45069c528c15c9fdd749>:0 
+  at MHLab.Patch.Core.Client.Advanced.IO.SmartDownloader.Download (System.Collections.Generic.List`1[T] entries, System.Action`1[T] onEntryStarted, System.Action`1[T] onChunkDownloaded, System.Action`1[T] onEntryCompleted) [0x00105] in C:\Users\Valeriy\Documents\Projects\Space Game\Assets\MHLab\Patch\Launcher\Scripts\Core\IO\Advanced\SmartDownloader.cs:94 
+  at MHLab.Patch.Core.Client.Repairer.Update () [0x002ed] in C:\Users\Valeriy\Documents\Projects\Space Game\Assets\MHLab\Patch\Launcher\Scripts\Core\Repairer.cs:109 
+  at MHLab.Patch.Core.Client.Runners.UpdateRunner.Update () [0x0001d] in C:\Users\Valeriy\Documents\Projects\Space Game\Assets\MHLab\Patch\Launcher\Scripts\Core\Runners\UpdateRunner.cs:23 
+  at MHLab.Patch.Core.Client.UpdatingContext.Update () [0x00000] in C:\Users\Valeriy\Documents\Projects\Space Game\Assets\MHLab\Patch\Launcher\Scripts\Core\UpdatingContext.cs:142 
+  at MHLab.Patch.Launcher.Scripts.LauncherBase.CheckForUpdates () [0x00006] in C:\Users\Valeriy\Documents\Projects\Space Game\Assets\MHLab\Patch\Launcher\Scripts\LauncherBase.cs:211 
+[5/3/2022 10:14:38 AM] [INF] [LauncherBase.cs::StartUpdateProcess@126] ===> [Game updating] process STARTED! <===
+[5/3/2022 10:14:39 AM] [INF] [UpdatingContext.cs::Initialize@74] Update context initializing...
+[5/3/2022 10:14:39 AM] [INF] [UpdatingContext.cs::Initialize@75] Software version: 2.6.2
+[5/3/2022 10:14:39 AM] [INF] [UpdatingContext.cs::Initialize@76] Update context points to https://raw.githubusercontent.com/Ezraay/space-game/master/PATCHWorkspace
+[5/3/2022 10:14:39 AM] [DBG] [UpdatingContext.cs::Initialize@77] ===> Debug Mode: ENABLED <===
+[5/3/2022 10:14:39 AM] [INF] [UpdatingContext.cs::SetCurrentVersion@161] Retrieved current version: 0.1.1
+[5/3/2022 10:14:39 AM] [INF] [UpdatingContext.cs::Initialize@84] Workspace cleaned. Removed 0 files
+[5/3/2022 10:14:39 AM] [WRN] [UpdatingContext.cs::GetPatchesIndex@268] No patches index found on the remote server. The Update process will be skipped.
+[5/3/2022 10:14:39 AM] [WRN] [UpdatingContext.cs::GetUpdaterDefinition@204] No updater definition found on remote server. The Launcher update will be skipped. Problem reference: The URL https://raw.githubusercontent.com/Ezraay/space-game/master/PATCHWorkspace/Updater/updater_index.json generated an exception.
+[5/3/2022 10:14:39 AM] [INF] [UpdatingContext.cs::GetLocalFiles@280] Collected information on 84 local files.
+[5/3/2022 10:14:39 AM] [INF] [UpdatingContext.cs::GetBuildDefinition@308] Retrieved definition for 0.1.1
+[5/3/2022 10:14:39 AM] [INF] [UpdatingContext.cs::GetPatchesShortestPath@367] Found 0 applicable updates.
+[5/3/2022 10:14:39 AM] [INF] [UpdatingContext.cs::Initialize@91] Update context completed initialization.
+[5/3/2022 10:14:39 AM] [INF] [Repairer.cs::Update@34] Repairing process started.
+[5/3/2022 10:14:46 AM] [INF] [SmartDownloader.cs::Download@37] Sorted 91 files in [0.0001753s].
+[5/3/2022 10:15:21 AM] [ERR] [Launcher.cs::UpdateFailed@131] ===> [Game updating] process FAILED! <=== - One or more errors occurred. -   at System.Threading.Tasks.Task.WaitAll (System.Threading.Tasks.Task[] tasks, System.Int32 millisecondsTimeout, System.Threading.CancellationToken cancellationToken) [0x001d1] in <695d1cc93cca45069c528c15c9fdd749>:0 
+  at System.Threading.Tasks.Task.WaitAll (System.Threading.Tasks.Task[] tasks, System.Int32 millisecondsTimeout) [0x00000] in <695d1cc93cca45069c528c15c9fdd749>:0 
+  at System.Threading.Tasks.Task.WaitAll (System.Threading.Tasks.Task[] tasks) [0x00000] in <695d1cc93cca45069c528c15c9fdd749>:0 
+  at MHLab.Patch.Core.Client.Advanced.IO.SmartDownloader.Download (System.Collections.Generic.List`1[T] entries, System.Action`1[T] onEntryStarted, System.Action`1[T] onChunkDownloaded, System.Action`1[T] onEntryCompleted) [0x00105] in C:\Users\Valeriy\Documents\Projects\Space Game\Assets\MHLab\Patch\Launcher\Scripts\Core\IO\Advanced\SmartDownloader.cs:94 
+  at MHLab.Patch.Core.Client.Repairer.Update () [0x002ed] in C:\Users\Valeriy\Documents\Projects\Space Game\Assets\MHLab\Patch\Launcher\Scripts\Core\Repairer.cs:109 
+  at MHLab.Patch.Core.Client.Runners.UpdateRunner.Update () [0x0001d] in C:\Users\Valeriy\Documents\Projects\Space Game\Assets\MHLab\Patch\Launcher\Scripts\Core\Runners\UpdateRunner.cs:23 
+  at MHLab.Patch.Core.Client.UpdatingContext.Update () [0x00000] in C:\Users\Valeriy\Documents\Projects\Space Game\Assets\MHLab\Patch\Launcher\Scripts\Core\UpdatingContext.cs:142 
+  at MHLab.Patch.Launcher.Scripts.LauncherBase.CheckForUpdates () [0x00006] in C:\Users\Valeriy\Documents\Projects\Space Game\Assets\MHLab\Patch\Launcher\Scripts\LauncherBase.cs:211 
+One or more errors occurred.
+  at System.Threading.Tasks.Task.WaitAll (System.Threading.Tasks.Task[] tasks, System.Int32 millisecondsTimeout, System.Threading.CancellationToken cancellationToken) [0x001d1] in <695d1cc93cca45069c528c15c9fdd749>:0 
+  at System.Threading.Tasks.Task.WaitAll (System.Threading.Tasks.Task[] tasks, System.Int32 millisecondsTimeout) [0x00000] in <695d1cc93cca45069c528c15c9fdd749>:0 
+  at System.Threading.Tasks.Task.WaitAll (System.Threading.Tasks.Task[] tasks) [0x00000] in <695d1cc93cca45069c528c15c9fdd749>:0 
+  at MHLab.Patch.Core.Client.Advanced.IO.SmartDownloader.Download (System.Collections.Generic.List`1[T] entries, System.Action`1[T] onEntryStarted, System.Action`1[T] onChunkDownloaded, System.Action`1[T] onEntryCompleted) [0x00105] in C:\Users\Valeriy\Documents\Projects\Space Game\Assets\MHLab\Patch\Launcher\Scripts\Core\IO\Advanced\SmartDownloader.cs:94 
+  at MHLab.Patch.Core.Client.Repairer.Update () [0x002ed] in C:\Users\Valeriy\Documents\Projects\Space Game\Assets\MHLab\Patch\Launcher\Scripts\Core\Repairer.cs:109 
+  at MHLab.Patch.Core.Client.Runners.UpdateRunner.Update () [0x0001d] in C:\Users\Valeriy\Documents\Projects\Space Game\Assets\MHLab\Patch\Launcher\Scripts\Core\Runners\UpdateRunner.cs:23 
+  at MHLab.Patch.Core.Client.UpdatingContext.Update () [0x00000] in C:\Users\Valeriy\Documents\Projects\Space Game\Assets\MHLab\Patch\Launcher\Scripts\Core\UpdatingContext.cs:142 
+  at MHLab.Patch.Launcher.Scripts.LauncherBase.CheckForUpdates () [0x00006] in C:\Users\Valeriy\Documents\Projects\Space Game\Assets\MHLab\Patch\Launcher\Scripts\LauncherBase.cs:211 
+[5/3/2022 10:18:27 AM] [INF] [LauncherBase.cs::StartUpdateProcess@126] ===> [Game updating] process STARTED! <===
+[5/3/2022 10:18:28 AM] [INF] [UpdatingContext.cs::Initialize@74] Update context initializing...
+[5/3/2022 10:18:28 AM] [INF] [UpdatingContext.cs::Initialize@75] Software version: 2.6.2
+[5/3/2022 10:18:28 AM] [INF] [UpdatingContext.cs::Initialize@76] Update context points to https://gitcdn.link/cdn/Ezraay/space-game/master/PATCHWorkspace
+[5/3/2022 10:18:28 AM] [DBG] [UpdatingContext.cs::Initialize@77] ===> Debug Mode: ENABLED <===
+[5/3/2022 10:18:28 AM] [INF] [UpdatingContext.cs::SetCurrentVersion@161] Retrieved current version: 0.1.1
+[5/3/2022 10:18:28 AM] [INF] [UpdatingContext.cs::Initialize@84] Workspace cleaned. Removed 0 files
+[5/3/2022 10:18:29 AM] [INF] [UpdatingContext.cs::GetLocalFiles@280] Collected information on 84 local files.
+[5/3/2022 10:18:30 AM] [INF] [UpdatingContext.cs::GetBuildDefinition@308] Retrieved definition for 0.1.1
+[5/3/2022 10:18:30 AM] [INF] [UpdatingContext.cs::GetPatchesShortestPath@367] Found 0 applicable updates.
+[5/3/2022 10:18:30 AM] [INF] [UpdatingContext.cs::Initialize@91] Update context completed initialization.
+[5/3/2022 10:18:30 AM] [INF] [Repairer.cs::Update@34] Repairing process started.
+[5/3/2022 10:18:36 AM] [INF] [SmartDownloader.cs::Download@37] Sorted 91 files in [9.13E-05s].
+[5/3/2022 10:19:10 AM] [INF] [SmartDownloader.cs::Download@97] Downloaded 91 files in [33.3889634s].
+[5/3/2022 10:19:10 AM] [ERR] [Launcher.cs::UpdateFailed@131] ===> [Game updating] process FAILED! <=== - Could not find file 'C:/Users/Valeriy/Documents/Projects/Space Game/PATCHWorkspace/TestLauncher\Game\Ceres_Data/Managed/Unity.TextMeshPro.dll'. -   at System.IO.__Error.WinIOError (System.Int32 errorCode, System.String maybeFullPath) [0x000c4] in <695d1cc93cca45069c528c15c9fdd749>:0 
+  at System.IO.FileInfo.get_Length () [0x0003f] in <695d1cc93cca45069c528c15c9fdd749>:0 
+  at (wrapper remoting-invoke-with-check) System.IO.FileInfo.get_Length()
+  at MHLab.Patch.Core.IO.FilesManager.GetFileInfo (System.String filePath) [0x0000c] in C:\Users\Valeriy\Documents\Projects\Space Game\Assets\MHLab\Patch\Core\IO\FilesManager.cs:77 
+  at MHLab.Patch.Core.IO.FileSystem.GetFileInfo (MHLab.Patch.Core.IO.FilePath path) [0x00000] in C:\Users\Valeriy\Documents\Projects\Space Game\Assets\MHLab\Patch\Core\IO\FileSystem.cs:93 
+  at MHLab.Patch.Core.Client.IO.DownloaderHelper.ValidateDownloadedResult (System.Collections.Generic.List`1[T] entries, MHLab.Patch.Core.IO.IFileSystem fileSystem, MHLab.Patch.Core.Logging.ILogger logger) [0x00028] in C:\Users\Valeriy\Documents\Projects\Space Game\Assets\MHLab\Patch\Launcher\Scripts\Core\IO\DownloaderHelper.cs:52 
+  at MHLab.Patch.Core.Client.Advanced.IO.SmartDownloader.Download (System.Collections.Generic.List`1[T] entries, System.Action`1[T] onEntryStarted, System.Action`1[T] onChunkDownloaded, System.Action`1[T] onEntryCompleted) [0x00177] in C:\Users\Valeriy\Documents\Projects\Space Game\Assets\MHLab\Patch\Launcher\Scripts\Core\IO\Advanced\SmartDownloader.cs:101 
+  at MHLab.Patch.Core.Client.Repairer.Update () [0x002ed] in C:\Users\Valeriy\Documents\Projects\Space Game\Assets\MHLab\Patch\Launcher\Scripts\Core\Repairer.cs:109 
+  at MHLab.Patch.Core.Client.Runners.UpdateRunner.Update () [0x0001d] in C:\Users\Valeriy\Documents\Projects\Space Game\Assets\MHLab\Patch\Launcher\Scripts\Core\Runners\UpdateRunner.cs:23 
+  at MHLab.Patch.Core.Client.UpdatingContext.Update () [0x00000] in C:\Users\Valeriy\Documents\Projects\Space Game\Assets\MHLab\Patch\Launcher\Scripts\Core\UpdatingContext.cs:142 
+  at MHLab.Patch.Launcher.Scripts.LauncherBase.CheckForUpdates () [0x00006] in C:\Users\Valeriy\Documents\Projects\Space Game\Assets\MHLab\Patch\Launcher\Scripts\LauncherBase.cs:211 
+Could not find file 'C:/Users/Valeriy/Documents/Projects/Space Game/PATCHWorkspace/TestLauncher\Game\Ceres_Data/Managed/Unity.TextMeshPro.dll'.
+  at System.IO.__Error.WinIOError (System.Int32 errorCode, System.String maybeFullPath) [0x000c4] in <695d1cc93cca45069c528c15c9fdd749>:0 
+  at System.IO.FileInfo.get_Length () [0x0003f] in <695d1cc93cca45069c528c15c9fdd749>:0 
+  at (wrapper remoting-invoke-with-check) System.IO.FileInfo.get_Length()
+  at MHLab.Patch.Core.IO.FilesManager.GetFileInfo (System.String filePath) [0x0000c] in C:\Users\Valeriy\Documents\Projects\Space Game\Assets\MHLab\Patch\Core\IO\FilesManager.cs:77 
+  at MHLab.Patch.Core.IO.FileSystem.GetFileInfo (MHLab.Patch.Core.IO.FilePath path) [0x00000] in C:\Users\Valeriy\Documents\Projects\Space Game\Assets\MHLab\Patch\Core\IO\FileSystem.cs:93 
+  at MHLab.Patch.Core.Client.IO.DownloaderHelper.ValidateDownloadedResult (System.Collections.Generic.List`1[T] entries, MHLab.Patch.Core.IO.IFileSystem fileSystem, MHLab.Patch.Core.Logging.ILogger logger) [0x00028] in C:\Users\Valeriy\Documents\Projects\Space Game\Assets\MHLab\Patch\Launcher\Scripts\Core\IO\DownloaderHelper.cs:52 
+  at MHLab.Patch.Core.Client.Advanced.IO.SmartDownloader.Download (System.Collections.Generic.List`1[T] entries, System.Action`1[T] onEntryStarted, System.Action`1[T] onChunkDownloaded, System.Action`1[T] onEntryCompleted) [0x00177] in C:\Users\Valeriy\Documents\Projects\Space Game\Assets\MHLab\Patch\Launcher\Scripts\Core\IO\Advanced\SmartDownloader.cs:101 
+  at MHLab.Patch.Core.Client.Repairer.Update () [0x002ed] in C:\Users\Valeriy\Documents\Projects\Space Game\Assets\MHLab\Patch\Launcher\Scripts\Core\Repairer.cs:109 
+  at MHLab.Patch.Core.Client.Runners.UpdateRunner.Update () [0x0001d] in C:\Users\Valeriy\Documents\Projects\Space Game\Assets\MHLab\Patch\Launcher\Scripts\Core\Runners\UpdateRunner.cs:23 
+  at MHLab.Patch.Core.Client.UpdatingContext.Update () [0x00000] in C:\Users\Valeriy\Documents\Projects\Space Game\Assets\MHLab\Patch\Launcher\Scripts\Core\UpdatingContext.cs:142 
+  at MHLab.Patch.Launcher.Scripts.LauncherBase.CheckForUpdates () [0x00006] in C:\Users\Valeriy\Documents\Projects\Space Game\Assets\MHLab\Patch\Launcher\Scripts\LauncherBase.cs:211 
