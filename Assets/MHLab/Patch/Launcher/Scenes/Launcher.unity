@@ -609,8 +609,8 @@ MonoBehaviour:
   RemoteUrl: https://gitcdn.link/cdn/Ezraay/space-game/master/PATCHWorkspace
   LauncherExecutableName: Ceres Launcher.exe
   GameExecutableName: Ceres.exe
-  LaunchAnywayOnError: 0
-  DebugMode: 1
+  LaunchAnywayOnError: 1
+  DebugMode: 0
   Dispatcher: {fileID: 1654408391}
   ProgressBar: {fileID: 1700035541}
   DownloadSpeed: {fileID: 8838995311128691409}

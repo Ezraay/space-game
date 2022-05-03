@@ -174,3 +174,51 @@ Could not find file 'C:/Users/Valeriy/Documents/Projects/Space Game/PATCHWorkspa
   at MHLab.Patch.Core.Client.Runners.UpdateRunner.Update () [0x0001d] in C:\Users\Valeriy\Documents\Projects\Space Game\Assets\MHLab\Patch\Launcher\Scripts\Core\Runners\UpdateRunner.cs:23 
   at MHLab.Patch.Core.Client.UpdatingContext.Update () [0x00000] in C:\Users\Valeriy\Documents\Projects\Space Game\Assets\MHLab\Patch\Launcher\Scripts\Core\UpdatingContext.cs:142 
   at MHLab.Patch.Launcher.Scripts.LauncherBase.CheckForUpdates () [0x00006] in C:\Users\Valeriy\Documents\Projects\Space Game\Assets\MHLab\Patch\Launcher\Scripts\LauncherBase.cs:211 
+[5/3/2022 10:34:58 AM] [INF] [LauncherBase.cs::StartUpdateProcess@126] ===> [Game updating] process STARTED! <===
+[5/3/2022 10:34:58 AM] [INF] [UpdatingContext.cs::Initialize@74] Update context initializing...
+[5/3/2022 10:34:58 AM] [INF] [UpdatingContext.cs::Initialize@75] Software version: 2.6.2
+[5/3/2022 10:34:58 AM] [INF] [UpdatingContext.cs::Initialize@76] Update context points to https://gitcdn.link/cdn/Ezraay/space-game/master/PATCHWorkspace
+[5/3/2022 10:34:58 AM] [DBG] [UpdatingContext.cs::Initialize@77] ===> Debug Mode: ENABLED <===
+[5/3/2022 10:34:58 AM] [INF] [UpdatingContext.cs::SetCurrentVersion@161] Retrieved current version: 0.1.1
+[5/3/2022 10:34:58 AM] [INF] [UpdatingContext.cs::Initialize@84] Workspace cleaned. Removed 0 files
+[5/3/2022 10:34:59 AM] [INF] [UpdatingContext.cs::GetLocalFiles@280] Collected information on 150 local files.
+[5/3/2022 10:34:59 AM] [INF] [UpdatingContext.cs::GetBuildDefinition@308] Retrieved definition for 0.1.1
+[5/3/2022 10:34:59 AM] [INF] [UpdatingContext.cs::GetPatchesShortestPath@367] Found 0 applicable updates.
+[5/3/2022 10:34:59 AM] [INF] [UpdatingContext.cs::Initialize@91] Update context completed initialization.
+[5/3/2022 10:34:59 AM] [INF] [Repairer.cs::Update@34] Repairing process started.
+[5/3/2022 10:35:12 AM] [INF] [SmartDownloader.cs::Download@37] Sorted 38 files in [0.0001682s].
+[5/3/2022 10:35:25 AM] [INF] [SmartDownloader.cs::Download@97] Downloaded 38 files in [13.1011669s].
+[5/3/2022 10:35:26 AM] [DBG] [DownloaderHelper.cs::ValidateDownloadedResult@77] The following files are not valid after debug validation: 
+[C:/Users/Valeriy/Documents/Projects/Space Game/PATCHWorkspace/TestLauncher\Game\Ceres_Data/RuntimeInitializeOnLoads.json] with expected size of [13]. Found [12]
+[C:/Users/Valeriy/Documents/Projects/Space Game/PATCHWorkspace/TestLauncher\Game\Ceres_Data/Managed/Unity.2D.Common.Runtime.pdb] with expected size of [440]. Found [14]
+[C:/Users/Valeriy/Documents/Projects/Space Game/PATCHWorkspace/TestLauncher\Game\Ceres_Data/Managed/Unity.InternalAPIEngineBridge.001.pdb] with expected size of [936]. Found [14]
+[C:/Users/Valeriy/Documents/Projects/Space Game/PATCHWorkspace/TestLauncher\Game\MonoBleedingEdge/etc/mono/4.0/Browsers/Compat.browser] with expected size of [1605]. Found [1586]
+[C:/Users/Valeriy/Documents/Projects/Space Game/PATCHWorkspace/TestLauncher\Game\MonoBleedingEdge/etc/mono/4.5/Browsers/Compat.browser] with expected size of [1605]. Found [1586]
+[C:/Users/Valeriy/Documents/Projects/Space Game/PATCHWorkspace/TestLauncher\Game\MonoBleedingEdge/etc/mono/2.0/Browsers/Compat.browser] with expected size of [1605]. Found [1586]
+[C:/Users/Valeriy/Documents/Projects/Space Game/PATCHWorkspace/TestLauncher\Game\Ceres_Data/Managed/Assembly-CSharp-firstpass.pdb] with expected size of [2004]. Found [14]
+[C:/Users/Valeriy/Documents/Projects/Space Game/PATCHWorkspace/TestLauncher\Game\Ceres_Data/Managed/Unity.2D.PixelPerfect.pdb] with expected size of [4180]. Found [14]
+[C:/Users/Valeriy/Documents/Projects/Space Game/PATCHWorkspace/TestLauncher\Game\Ceres_Data/Managed/NaughtyAttributes.Test.pdb] with expected size of [6628]. Found [14]
+[C:/Users/Valeriy/Documents/Projects/Space Game/PATCHWorkspace/TestLauncher\Game\Ceres_Data/Managed/NaughtyAttributes.Core.pdb] with expected size of [8172]. Found [14]
+[C:/Users/Valeriy/Documents/Projects/Space Game/PATCHWorkspace/TestLauncher\Game\Ceres_Data/Managed/Unity.2D.IK.Runtime.pdb] with expected size of [10848]. Found [14]
+[C:/Users/Valeriy/Documents/Projects/Space Game/PATCHWorkspace/TestLauncher\Game\Ceres_Data/Managed/Unity.2D.Animation.Runtime.pdb] with expected size of [18524]. Found [14]
+[C:/Users/Valeriy/Documents/Projects/Space Game/PATCHWorkspace/TestLauncher\Game\Ceres_Data/Managed/Unity.Timeline.pdb] with expected size of [64172]. Found [14]
+[C:/Users/Valeriy/Documents/Projects/Space Game/PATCHWorkspace/TestLauncher\Game\Ceres_Data/Managed/Unity.2D.SpriteShape.Runtime.pdb] with expected size of [72144]. Found [14]
+[C:/Users/Valeriy/Documents/Projects/Space Game/PATCHWorkspace/TestLauncher\Game\Ceres_Data/Managed/Assembly-CSharp.pdb] with expected size of [103960]. Found [14]
+[C:/Users/Valeriy/Documents/Projects/Space Game/PATCHWorkspace/TestLauncher\Game\Ceres_Data/Managed/Unity.2D.Animation.Triangle.Runtime.pdb] with expected size of [138572]. Found [14]
+[C:/Users/Valeriy/Documents/Projects/Space Game/PATCHWorkspace/TestLauncher\Game\Ceres_Data/Managed/UnityEngine.UI.pdb] with expected size of [146116]. Found [14]
+[C:/Users/Valeriy/Documents/Projects/Space Game/PATCHWorkspace/TestLauncher\Game\Ceres_Data/Managed/Unity.TextMeshPro.pdb] with expected size of [212644]. Found [14]
+[C:/Users/Valeriy/Documents/Projects/Space Game/PATCHWorkspace/TestLauncher\Game\Ceres_Data/Managed/Unity.Mathematics.pdb] with expected size of [483180]. Found [14]
+
+[5/3/2022 10:35:26 AM] [ERR] [Launcher.cs::UpdateFailed@131] ===> [Game updating] process FAILED! <=== - Exception of type 'MHLab.Patch.Core.Utilities.Asserts.AssertFailedException' was thrown. -   at MHLab.Patch.Core.Utilities.Asserts.Assert.AlwaysFail () [0x00000] in C:\Users\Valeriy\Documents\Projects\Space Game\Assets\MHLab\Patch\Core\Utilities\Asserts\Assert.Always.cs:12 
+  at MHLab.Patch.Core.Client.Advanced.IO.SmartDownloader.Download (System.Collections.Generic.List`1[T] entries, System.Action`1[T] onEntryStarted, System.Action`1[T] onChunkDownloaded, System.Action`1[T] onEntryCompleted) [0x00177] in C:\Users\Valeriy\Documents\Projects\Space Game\Assets\MHLab\Patch\Launcher\Scripts\Core\IO\Advanced\SmartDownloader.cs:101 
+  at MHLab.Patch.Core.Client.Repairer.Update () [0x002ed] in C:\Users\Valeriy\Documents\Projects\Space Game\Assets\MHLab\Patch\Launcher\Scripts\Core\Repairer.cs:109 
+  at MHLab.Patch.Core.Client.Runners.UpdateRunner.Update () [0x0001d] in C:\Users\Valeriy\Documents\Projects\Space Game\Assets\MHLab\Patch\Launcher\Scripts\Core\Runners\UpdateRunner.cs:23 
+  at MHLab.Patch.Core.Client.UpdatingContext.Update () [0x00000] in C:\Users\Valeriy\Documents\Projects\Space Game\Assets\MHLab\Patch\Launcher\Scripts\Core\UpdatingContext.cs:142 
+  at MHLab.Patch.Launcher.Scripts.LauncherBase.CheckForUpdates () [0x00006] in C:\Users\Valeriy\Documents\Projects\Space Game\Assets\MHLab\Patch\Launcher\Scripts\LauncherBase.cs:211 
+Exception of type 'MHLab.Patch.Core.Utilities.Asserts.AssertFailedException' was thrown.
+  at MHLab.Patch.Core.Utilities.Asserts.Assert.AlwaysFail () [0x00000] in C:\Users\Valeriy\Documents\Projects\Space Game\Assets\MHLab\Patch\Core\Utilities\Asserts\Assert.Always.cs:12 
+  at MHLab.Patch.Core.Client.Advanced.IO.SmartDownloader.Download (System.Collections.Generic.List`1[T] entries, System.Action`1[T] onEntryStarted, System.Action`1[T] onChunkDownloaded, System.Action`1[T] onEntryCompleted) [0x00177] in C:\Users\Valeriy\Documents\Projects\Space Game\Assets\MHLab\Patch\Launcher\Scripts\Core\IO\Advanced\SmartDownloader.cs:101 
+  at MHLab.Patch.Core.Client.Repairer.Update () [0x002ed] in C:\Users\Valeriy\Documents\Projects\Space Game\Assets\MHLab\Patch\Launcher\Scripts\Core\Repairer.cs:109 
+  at MHLab.Patch.Core.Client.Runners.UpdateRunner.Update () [0x0001d] in C:\Users\Valeriy\Documents\Projects\Space Game\Assets\MHLab\Patch\Launcher\Scripts\Core\Runners\UpdateRunner.cs:23 
+  at MHLab.Patch.Core.Client.UpdatingContext.Update () [0x00000] in C:\Users\Valeriy\Documents\Projects\Space Game\Assets\MHLab\Patch\Launcher\Scripts\Core\UpdatingContext.cs:142 
+  at MHLab.Patch.Launcher.Scripts.LauncherBase.CheckForUpdates () [0x00006] in C:\Users\Valeriy\Documents\Projects\Space Game\Assets\MHLab\Patch\Launcher\Scripts\LauncherBase.cs:211 
