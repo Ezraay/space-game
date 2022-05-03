@@ -609,8 +609,8 @@ MonoBehaviour:
   RemoteUrl: https://gitcdn.link/cdn/Ezraay/space-game/master/PATCHWorkspace
   LauncherExecutableName: Ceres Launcher.exe
   GameExecutableName: Ceres.exe
-  LaunchAnywayOnError: 1
-  DebugMode: 0
+  LaunchAnywayOnError: 0
+  DebugMode: 1
   Dispatcher: {fileID: 1654408391}
   ProgressBar: {fileID: 1700035541}
   DownloadSpeed: {fileID: 8838995311128691409}
@@ -1413,7 +1413,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6893855098912965455, guid: c986e1974f10e59479942a8a386ba786, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -14.875916
+      value: -14.875885
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c986e1974f10e59479942a8a386ba786, type: 3}
