@@ -1,0 +1,66 @@
+[5/3/2022 2:47:49 PM] [INF] [LauncherBase.cs::StartUpdateProcess@126] ===> [Game updating] process STARTED! <===
+[5/3/2022 2:47:49 PM] [INF] [UpdatingContext.cs::Initialize@74] Update context initializing...
+[5/3/2022 2:47:49 PM] [INF] [UpdatingContext.cs::Initialize@75] Software version: 2.6.2
+[5/3/2022 2:47:49 PM] [INF] [UpdatingContext.cs::Initialize@76] Update context points to https://gitcdn.link/cdn/Ezraay/space-game/master/PATCHWorkspace
+[5/3/2022 2:47:49 PM] [DBG] [UpdatingContext.cs::Initialize@77] ===> Debug Mode: ENABLED <===
+[5/3/2022 2:47:49 PM] [WRN] [UpdatingContext.cs::SetCurrentVersion@172] No current version found. A full repair may be required.
+[5/3/2022 2:47:49 PM] [INF] [UpdatingContext.cs::Initialize@84] Workspace cleaned. Removed 0 files
+[5/3/2022 2:47:50 PM] [INF] [UpdatingContext.cs::GetLocalFiles@280] Collected information on 160 local files.
+[5/3/2022 2:47:50 PM] [INF] [UpdatingContext.cs::GetBuildDefinition@308] Retrieved definition for 0.1.2
+[5/3/2022 2:47:50 PM] [INF] [UpdatingContext.cs::GetPatchesShortestPath@367] Found 0 applicable updates.
+[5/3/2022 2:47:50 PM] [INF] [UpdatingContext.cs::Initialize@91] Update context completed initialization.
+[5/3/2022 2:47:50 PM] [INF] [Repairer.cs::Update@34] Repairing process started.
+[5/3/2022 2:47:50 PM] [INF] [SmartDownloader.cs::Download@37] Sorted 148 files in [0.0001768s].
+[5/3/2022 2:48:10 PM] [INF] [SmartDownloader.cs::Download@97] Downloaded 148 files in [19.9262329s].
+[5/3/2022 2:48:10 PM] [DBG] [DownloaderHelper.cs::ValidateDownloadedResult@77] The following files are not valid after debug validation: 
+[C:/Users/Valeriy/Documents/Projects/Space Game/PATCHWorkspace/Updater\Game\Ceres_Data/RuntimeInitializeOnLoads.json] with expected size of [13]. Found [12]
+[C:/Users/Valeriy/Documents/Projects/Space Game/PATCHWorkspace/Updater\Game\MonoBleedingEdge/etc/mono/4.5/Browsers/Compat.browser] with expected size of [1605]. Found [1586]
+[C:/Users/Valeriy/Documents/Projects/Space Game/PATCHWorkspace/Updater\Game\MonoBleedingEdge/etc/mono/2.0/Browsers/Compat.browser] with expected size of [1605]. Found [1586]
+[C:/Users/Valeriy/Documents/Projects/Space Game/PATCHWorkspace/Updater\Game\MonoBleedingEdge/etc/mono/4.0/Browsers/Compat.browser] with expected size of [1605]. Found [1586]
+
+[5/3/2022 2:48:10 PM] [ERR] [Launcher.cs::UpdateFailed@131] ===> [Game updating] process FAILED! <=== - Exception of type 'MHLab.Patch.Core.Utilities.Asserts.AssertFailedException' was thrown. -   at MHLab.Patch.Core.Utilities.Asserts.Assert.AlwaysFail () [0x00001] in C:\Users\Valeriy\Documents\Projects\Space Game\Assets\MHLab\Patch\Core\Utilities\Asserts\Assert.Always.cs:12 
+  at MHLab.Patch.Core.Client.Advanced.IO.SmartDownloader.Download (System.Collections.Generic.List`1[T] entries, System.Action`1[T] onEntryStarted, System.Action`1[T] onChunkDownloaded, System.Action`1[T] onEntryCompleted) [0x0018d] in C:\Users\Valeriy\Documents\Projects\Space Game\Assets\MHLab\Patch\Launcher\Scripts\Core\IO\Advanced\SmartDownloader.cs:101 
+  at MHLab.Patch.Core.Client.Repairer.Update () [0x0033c] in C:\Users\Valeriy\Documents\Projects\Space Game\Assets\MHLab\Patch\Launcher\Scripts\Core\Repairer.cs:109 
+  at MHLab.Patch.Core.Client.Runners.UpdateRunner.Update () [0x00021] in C:\Users\Valeriy\Documents\Projects\Space Game\Assets\MHLab\Patch\Launcher\Scripts\Core\Runners\UpdateRunner.cs:23 
+  at MHLab.Patch.Core.Client.UpdatingContext.Update () [0x00001] in C:\Users\Valeriy\Documents\Projects\Space Game\Assets\MHLab\Patch\Launcher\Scripts\Core\UpdatingContext.cs:142 
+  at MHLab.Patch.Launcher.Scripts.LauncherBase.CheckForUpdates () [0x00009] in C:\Users\Valeriy\Documents\Projects\Space Game\Assets\MHLab\Patch\Launcher\Scripts\LauncherBase.cs:211 
+Exception of type 'MHLab.Patch.Core.Utilities.Asserts.AssertFailedException' was thrown.
+  at MHLab.Patch.Core.Utilities.Asserts.Assert.AlwaysFail () [0x00001] in C:\Users\Valeriy\Documents\Projects\Space Game\Assets\MHLab\Patch\Core\Utilities\Asserts\Assert.Always.cs:12 
+  at MHLab.Patch.Core.Client.Advanced.IO.SmartDownloader.Download (System.Collections.Generic.List`1[T] entries, System.Action`1[T] onEntryStarted, System.Action`1[T] onChunkDownloaded, System.Action`1[T] onEntryCompleted) [0x0018d] in C:\Users\Valeriy\Documents\Projects\Space Game\Assets\MHLab\Patch\Launcher\Scripts\Core\IO\Advanced\SmartDownloader.cs:101 
+  at MHLab.Patch.Core.Client.Repairer.Update () [0x0033c] in C:\Users\Valeriy\Documents\Projects\Space Game\Assets\MHLab\Patch\Launcher\Scripts\Core\Repairer.cs:109 
+  at MHLab.Patch.Core.Client.Runners.UpdateRunner.Update () [0x00021] in C:\Users\Valeriy\Documents\Projects\Space Game\Assets\MHLab\Patch\Launcher\Scripts\Core\Runners\UpdateRunner.cs:23 
+  at MHLab.Patch.Core.Client.UpdatingContext.Update () [0x00001] in C:\Users\Valeriy\Documents\Projects\Space Game\Assets\MHLab\Patch\Launcher\Scripts\Core\UpdatingContext.cs:142 
+  at MHLab.Patch.Launcher.Scripts.LauncherBase.CheckForUpdates () [0x00009] in C:\Users\Valeriy\Documents\Projects\Space Game\Assets\MHLab\Patch\Launcher\Scripts\LauncherBase.cs:211 
+[5/3/2022 2:48:41 PM] [INF] [LauncherBase.cs::StartUpdateProcess@126] ===> [Game updating] process STARTED! <===
+[5/3/2022 2:48:42 PM] [INF] [UpdatingContext.cs::Initialize@74] Update context initializing...
+[5/3/2022 2:48:42 PM] [INF] [UpdatingContext.cs::Initialize@75] Software version: 2.6.2
+[5/3/2022 2:48:42 PM] [INF] [UpdatingContext.cs::Initialize@76] Update context points to https://gitcdn.link/cdn/Ezraay/space-game/master/PATCHWorkspace
+[5/3/2022 2:48:42 PM] [DBG] [UpdatingContext.cs::Initialize@77] ===> Debug Mode: ENABLED <===
+[5/3/2022 2:48:42 PM] [INF] [UpdatingContext.cs::SetCurrentVersion@161] Retrieved current version: 0.1.2
+[5/3/2022 2:48:42 PM] [INF] [UpdatingContext.cs::Initialize@84] Workspace cleaned. Removed 0 files
+[5/3/2022 2:48:42 PM] [INF] [UpdatingContext.cs::GetLocalFiles@280] Collected information on 308 local files.
+[5/3/2022 2:48:42 PM] [INF] [UpdatingContext.cs::GetBuildDefinition@308] Retrieved definition for 0.1.2
+[5/3/2022 2:48:42 PM] [INF] [UpdatingContext.cs::GetPatchesShortestPath@367] Found 0 applicable updates.
+[5/3/2022 2:48:42 PM] [INF] [UpdatingContext.cs::Initialize@91] Update context completed initialization.
+[5/3/2022 2:48:42 PM] [INF] [Repairer.cs::Update@34] Repairing process started.
+[5/3/2022 2:48:42 PM] [INF] [SmartDownloader.cs::Download@37] Sorted 4 files in [0.0001505s].
+[5/3/2022 2:48:42 PM] [INF] [SmartDownloader.cs::Download@97] Downloaded 4 files in [0.0466075s].
+[5/3/2022 2:48:42 PM] [DBG] [DownloaderHelper.cs::ValidateDownloadedResult@77] The following files are not valid after debug validation: 
+[C:/Users/Valeriy/Documents/Projects/Space Game/PATCHWorkspace/Updater\Game\Ceres_Data/RuntimeInitializeOnLoads.json] with expected size of [13]. Found [12]
+[C:/Users/Valeriy/Documents/Projects/Space Game/PATCHWorkspace/Updater\Game\MonoBleedingEdge/etc/mono/2.0/Browsers/Compat.browser] with expected size of [1605]. Found [1586]
+[C:/Users/Valeriy/Documents/Projects/Space Game/PATCHWorkspace/Updater\Game\MonoBleedingEdge/etc/mono/4.0/Browsers/Compat.browser] with expected size of [1605]. Found [1586]
+[C:/Users/Valeriy/Documents/Projects/Space Game/PATCHWorkspace/Updater\Game\MonoBleedingEdge/etc/mono/4.5/Browsers/Compat.browser] with expected size of [1605]. Found [1586]
+
+[5/3/2022 2:48:42 PM] [ERR] [Launcher.cs::UpdateFailed@131] ===> [Game updating] process FAILED! <=== - Exception of type 'MHLab.Patch.Core.Utilities.Asserts.AssertFailedException' was thrown. -   at MHLab.Patch.Core.Utilities.Asserts.Assert.AlwaysFail () [0x00001] in C:\Users\Valeriy\Documents\Projects\Space Game\Assets\MHLab\Patch\Core\Utilities\Asserts\Assert.Always.cs:12 
+  at MHLab.Patch.Core.Client.Advanced.IO.SmartDownloader.Download (System.Collections.Generic.List`1[T] entries, System.Action`1[T] onEntryStarted, System.Action`1[T] onChunkDownloaded, System.Action`1[T] onEntryCompleted) [0x0018d] in C:\Users\Valeriy\Documents\Projects\Space Game\Assets\MHLab\Patch\Launcher\Scripts\Core\IO\Advanced\SmartDownloader.cs:101 
+  at MHLab.Patch.Core.Client.Repairer.Update () [0x0033c] in C:\Users\Valeriy\Documents\Projects\Space Game\Assets\MHLab\Patch\Launcher\Scripts\Core\Repairer.cs:109 
+  at MHLab.Patch.Core.Client.Runners.UpdateRunner.Update () [0x00021] in C:\Users\Valeriy\Documents\Projects\Space Game\Assets\MHLab\Patch\Launcher\Scripts\Core\Runners\UpdateRunner.cs:23 
+  at MHLab.Patch.Core.Client.UpdatingContext.Update () [0x00001] in C:\Users\Valeriy\Documents\Projects\Space Game\Assets\MHLab\Patch\Launcher\Scripts\Core\UpdatingContext.cs:142 
+  at MHLab.Patch.Launcher.Scripts.LauncherBase.CheckForUpdates () [0x00009] in C:\Users\Valeriy\Documents\Projects\Space Game\Assets\MHLab\Patch\Launcher\Scripts\LauncherBase.cs:211 
+Exception of type 'MHLab.Patch.Core.Utilities.Asserts.AssertFailedException' was thrown.
+  at MHLab.Patch.Core.Utilities.Asserts.Assert.AlwaysFail () [0x00001] in C:\Users\Valeriy\Documents\Projects\Space Game\Assets\MHLab\Patch\Core\Utilities\Asserts\Assert.Always.cs:12 
+  at MHLab.Patch.Core.Client.Advanced.IO.SmartDownloader.Download (System.Collections.Generic.List`1[T] entries, System.Action`1[T] onEntryStarted, System.Action`1[T] onChunkDownloaded, System.Action`1[T] onEntryCompleted) [0x0018d] in C:\Users\Valeriy\Documents\Projects\Space Game\Assets\MHLab\Patch\Launcher\Scripts\Core\IO\Advanced\SmartDownloader.cs:101 
+  at MHLab.Patch.Core.Client.Repairer.Update () [0x0033c] in C:\Users\Valeriy\Documents\Projects\Space Game\Assets\MHLab\Patch\Launcher\Scripts\Core\Repairer.cs:109 
+  at MHLab.Patch.Core.Client.Runners.UpdateRunner.Update () [0x00021] in C:\Users\Valeriy\Documents\Projects\Space Game\Assets\MHLab\Patch\Launcher\Scripts\Core\Runners\UpdateRunner.cs:23 
+  at MHLab.Patch.Core.Client.UpdatingContext.Update () [0x00001] in C:\Users\Valeriy\Documents\Projects\Space Game\Assets\MHLab\Patch\Launcher\Scripts\Core\UpdatingContext.cs:142 
+  at MHLab.Patch.Launcher.Scripts.LauncherBase.CheckForUpdates () [0x00009] in C:\Users\Valeriy\Documents\Projects\Space Game\Assets\MHLab\Patch\Launcher\Scripts\LauncherBase.cs:211 
