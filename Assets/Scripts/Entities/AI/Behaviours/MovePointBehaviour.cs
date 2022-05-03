@@ -19,7 +19,7 @@ namespace Spaceships.Entities.AI.Behaviours
         public override void Tick()
         {
             if (Reached) return;
-            
+
             Vector3 inputs = GetInputs();
             ship.rotationInput = inputs.x;
             ship.thrustInput = inputs.y;

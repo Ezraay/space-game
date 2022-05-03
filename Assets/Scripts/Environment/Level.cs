@@ -12,11 +12,12 @@ namespace Spaceships.Environment
         public string Name => name;
 
 
-        public void SpawnPlayer(string shipID, Standing playerStanding)
+        public void SpawnPlayer(ShipData shipData, Standing playerStanding)
         {
             // Spawns the player in the current level
-            Ship spawnedShip = mainStation.SummonShip(shipID, playerStanding);
+            Ship spawnedShip = mainStation.SummonShip(shipData, playerStanding);
             Player.ship = spawnedShip;
+            Player.shipCombat = spawnedShip.GetComponent<ShipCombat>();
         }
     }
 }

@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
 using Spaceships.Entities;
 using Spaceships.SceneTransitions;
-using UnityEngine;
 using UnityEngine.Events;
 
 namespace Spaceships.Hangar
@@ -9,8 +8,8 @@ namespace Spaceships.Hangar
     public class ShipStorage
     {
         public readonly List<ShipData> items;
-        public UnityEvent<int> onDelete = new UnityEvent<int>();
         public UnityEvent<ShipData> onAdd = new UnityEvent<ShipData>();
+        public UnityEvent<int> onDelete = new UnityEvent<int>();
 
         public ShipStorage()
         {

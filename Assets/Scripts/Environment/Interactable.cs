@@ -1,5 +1,4 @@
-﻿using Spaceships.Entities;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Spaceships.Environment
 {

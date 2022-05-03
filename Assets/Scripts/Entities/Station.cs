@@ -17,9 +17,9 @@ namespace Spaceships.Entities
         [SerializeField] private AIPersonality randomShipPersonality;
         [SerializeField] private Standing randomShipStanding;
         [SerializeField] private new string name = "New Station";
+        private readonly List<Transform> spawns = new List<Transform>();
 
         private float spawnCooldown;
-        private readonly List<Transform> spawns = new List<Transform>();
         public override string InteractText => "Board Station";
 
         private void Awake()
@@ -44,16 +44,16 @@ namespace Spaceships.Entities
             // Creates a random AI ship
             spawnCooldown = Random.Range(minSpawnCooldown, maxSpawnCooldown);
             ShipData shipData = shipsToSpawn[Random.Range(0, shipsToSpawn.Length)];
-            Ship newShip = SummonShip(shipData.ID, randomShipStanding);
+            Ship newShip = SummonShip(shipData, randomShipStanding);
             ShipAI shipAI = newShip.gameObject.AddComponent<ShipAI>();
             shipAI.Setup(randomShipPersonality);
         }
 
-        public Ship SummonShip(string shipID, Standing standing)
+        public Ship SummonShip(ShipData shipToSpawn, Standing standing)
         {
             // Summons a ship and returns it
             Transform spawn = spawns[Random.Range(0, spawns.Count)];
-            Ship ship = ShipFactory.SpawnShip(shipID, standing, spawn.position, spawn.rotation);
+            Ship ship = ShipFactory.SpawnShip(shipToSpawn, standing, spawn.position, spawn.rotation);
             ship.forwardVelocity = ship.ShipData.ForwardSpeed;
             return ship;
         }

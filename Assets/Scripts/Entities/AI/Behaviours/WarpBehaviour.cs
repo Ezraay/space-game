@@ -8,9 +8,6 @@ namespace Spaceships.Entities.AI.Behaviours
         [SerializeField] private float warpDistance = 300;
         private MovePointBehaviour movePointBehaviour;
 
-
-        // override 
-
         public override void Setup(Ship ship, ShipAI shipAI)
         {
             base.Setup(ship, shipAI);

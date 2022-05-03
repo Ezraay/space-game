@@ -6,45 +6,35 @@ using UnityEngine.Events;
 namespace Spaceships.Entities
 {
     [RequireComponent(typeof(Rigidbody2D))]
-    public class Ship : Damageable
+    [RequireComponent(typeof(ShipCombat))]
+    public class Ship : MonoBehaviour
     {
-        [HideInInspector] public UnityEvent onWarp = new UnityEvent();
-        [HideInInspector] public UnityEvent onShoot = new UnityEvent();
+        public static List<Ship> AllShips = new List<Ship>();
 
         [SerializeField] private ShipData shipData;
 
-        [SerializeField] private Transform gunParent;
         [HideInInspector] public float rotationInput;
         [HideInInspector] public float thrustInput;
         [HideInInspector] public float strafeInput;
 
         [HideInInspector] public float forwardVelocity;
         [HideInInspector] public float rotationVelocity;
-        private readonly List<Transform> gunLocations = new List<Transform>();
         private Transform model;
 
         private new Rigidbody2D rigidbody;
-        private float shotCooldown;
-        private int shotNumber;
 
         private ShipTrail[] trails;
-        public Standing Standing { get; private set; }
+
+        public UnityEvent OnWarp { get; } = new UnityEvent();
         public ShipData ShipData => shipData;
-        public override float MaxHealth => shipData.MaxHealth;
-        public override string Name => shipData.Name;
 
-        protected override void Start()
+        private void Start()
         {
-            base.Start();
-
             rigidbody = GetComponent<Rigidbody2D>();
             trails = GetComponentsInChildren<ShipTrail>();
             model = transform.GetChild(0);
-
-            foreach (Transform gunChild in gunParent)
-            {
-                gunLocations.Add(gunChild);
-            }
+            
+            AllShips.Add(this);
         }
 
         protected virtual void Update()
@@ -54,12 +44,6 @@ namespace Spaceships.Entities
                 trail.SetLength(forwardVelocity / shipData.ForwardSpeed);
             }
 
-            shotCooldown = Mathf.Max(0, shotCooldown - Time.deltaTime);
-        }
-
-        public void Setup(Standing standing)
-        {
-            Standing = standing;
         }
 
         protected virtual void FixedUpdate()
@@ -68,32 +52,16 @@ namespace Spaceships.Entities
             UpdatePosition();
         }
 
-        public void Shoot(Vector2 target)
+        private void OnDestroy()
         {
-            if (shotCooldown > 0)
-                return;
-            shotCooldown = shipData.ShotCooldown * shipData.ShotsPerClick;
-            for (int i = 0; i < shipData.ShotsPerClick; i++)
-            {
-                Vector2 difference = target - (Vector2) gunLocations[shotNumber].position;
-                float angle = Mathf.Atan2(difference.x, -difference.y) * Mathf.Rad2Deg;
-                Projectile newProjectile =
-                    Instantiate(shipData.Projectile, gunLocations[shotNumber].position, Quaternion.identity);
-                newProjectile.Setup(shipData.DamagePerShot, this, angle, shipData.Pierce);
-
-                shotNumber = ++shotNumber % gunLocations.Count;
-            }
+            AllShips.Remove(this);
         }
 
         public void Warp()
         {
-            Destroy(gameObject, 3);
+            OnWarp.Invoke();
 
-            if (onWarp != null)
-            {
-                onWarp.Invoke();
-                OnDie.Invoke();
-            }
+            Destroy(gameObject, 3);
         }
 
         private void UpdateVelocity()
@@ -129,9 +97,8 @@ namespace Spaceships.Entities
                 }
             }
             else
-            {
                 rotationVelocity += rotationInput * shipData.RotateAcceleration * Time.fixedDeltaTime;
-            }
+
 
             rotationVelocity = Mathf.Clamp(rotationVelocity, -shipData.RotateSpeed, shipData.RotateSpeed);
 

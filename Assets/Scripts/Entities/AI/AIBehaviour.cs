@@ -5,7 +5,6 @@ namespace Spaceships.Entities.AI
     public abstract class AIBehaviour : MonoBehaviour
     {
         [SerializeField] [Range(0, 1)] private float weight;
-        // [SerializeField] private bool concurrent = true; // Whether or not to block other behaviours from happening
         protected Ship ship;
         protected ShipAI shipAI;
 

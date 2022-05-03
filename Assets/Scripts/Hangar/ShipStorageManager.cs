@@ -5,7 +5,8 @@ namespace Spaceships.Hangar
 {
     public class ShipStorageManager : MonoBehaviour
     {
-        private static Dictionary<string, ShipStorage> stationShipStorages = new Dictionary<string, ShipStorage>();
+        private static readonly Dictionary<string, ShipStorage> stationShipStorages =
+            new Dictionary<string, ShipStorage>();
 
         public static ShipStorage GetStorage(string hangarName)
         {
@@ -13,7 +14,6 @@ namespace Spaceships.Hangar
             {
                 ShipStorage newStorage = new ShipStorage();
                 stationShipStorages.Add(hangarName, newStorage);
-                Debug.Log(hangarName);
             }
 
             return stationShipStorages[hangarName];

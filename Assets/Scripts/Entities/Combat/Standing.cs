@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Spaceships.Entities.Combat
@@ -6,8 +7,8 @@ namespace Spaceships.Entities.Combat
     [CreateAssetMenu(menuName = "Create Alignment", fileName = "New Alignment", order = 0)]
     public class Standing : ScriptableObject
     {
-        private const float EnemyThreshold = 20; 
-        
+        private const float EnemyThreshold = 20;
+
         [SerializeField] private new string name = "New Alignment";
         [SerializeField] private Color color = Color.white;
         [SerializeField] private List<StandingRelationship> relationships;
@@ -26,12 +27,11 @@ namespace Spaceships.Entities.Combat
                 if (standingRelationship.Relationship <= EnemyThreshold)
                     result.Add(standingRelationship.Standing);
             }
-            
-            return result;
 
+            return result;
         }
-        
-        [System.Serializable]
+
+        [Serializable]
         public struct StandingRelationship
         {
             [SerializeField] private Standing standing;

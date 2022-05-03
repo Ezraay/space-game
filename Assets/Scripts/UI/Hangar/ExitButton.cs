@@ -9,7 +9,7 @@ namespace Spaceships.UI.Hangar
     public class ExitButton : MonoBehaviour
     {
         private Button button;
-        
+
         private void Start()
         {
             button = GetComponent<Button>();
@@ -20,10 +20,7 @@ namespace Spaceships.UI.Hangar
                     HangarManager.ShipStorage.RemoveActiveShip();
                     Loader.LoadSpace();
                 }
-                else
-                {
-                    // TODO: Show a modal to the player saying that you need a ship equipped
-                }
+                // TODO: Show a modal to the player saying that you need a ship equipped
             });
         }
     }

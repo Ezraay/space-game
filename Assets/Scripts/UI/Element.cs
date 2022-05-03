@@ -3,7 +3,7 @@ using UnityEngine.EventSystems;
 
 namespace Spaceships.UI
 {
-    public class Element : MonoBehaviour, IPointerDownHandler, IPointerClickHandler,
+    public abstract class Element : MonoBehaviour, IPointerDownHandler, IPointerClickHandler,
         IPointerUpHandler, IPointerExitHandler, IPointerEnterHandler,
         IBeginDragHandler, IDragHandler, IEndDragHandler
     {

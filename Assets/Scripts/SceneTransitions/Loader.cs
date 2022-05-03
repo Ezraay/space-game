@@ -14,7 +14,6 @@ namespace Spaceships.SceneTransitions
         public static void LoadSpace()
         {
             SceneManager.LoadScene("Space");
-            ShipFactory.allShips.Clear(); // TODO: Needs to go somewhere more appropriate :(
         }
     }
 }

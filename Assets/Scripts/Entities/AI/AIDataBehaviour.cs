@@ -6,7 +6,7 @@ namespace Spaceships.Entities.AI
     {
         protected Ship ship;
         protected ShipAI shipAI;
-        
+
         public virtual void Setup(Ship ship, ShipAI shipAI)
         {
             this.ship = ship;
@@ -15,7 +15,6 @@ namespace Spaceships.Entities.AI
 
         public virtual void Tick()
         {
-            
         }
     }
 }

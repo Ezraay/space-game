@@ -15,26 +15,36 @@ namespace Spaceships.Entities.AI
             {
                 behaviour.Tick();
             }
-            
+
+
+            List<AIBehaviour> highestBehaviours = GetHighestBehaviours();
+            foreach (AIBehaviour behaviour in highestBehaviours)
+            {
+                behaviour.Tick();
+            }
+        }
+
+        private List<AIBehaviour> GetHighestBehaviours()
+        {
             float highestWeight = 0;
             List<AIBehaviour> highestBehaviours = new List<AIBehaviour>();
             foreach (AIBehaviour behaviour in personality.Behaviours)
             {
                 float weight = behaviour.Weight;
+                if (weight == 0)
+                    continue;
+
                 if (weight > highestWeight)
                 {
                     highestBehaviours.Clear();
                     highestWeight = weight;
                 }
+
                 if (highestWeight == weight)
                     highestBehaviours.Add(behaviour);
             }
 
-            
-            if (highestWeight > 0)
-                foreach (AIBehaviour behaviour in highestBehaviours)
-                    behaviour.Tick();
-            
+            return highestBehaviours;
         }
 
         public void Setup(AIPersonality personalityPrefab)
@@ -46,7 +56,7 @@ namespace Spaceships.Entities.AI
             {
                 dataBehaviour.Setup(ship, this);
             }
-            
+
             foreach (AIBehaviour behaviour in personality.Behaviours)
             {
                 behaviour.Setup(ship, this);

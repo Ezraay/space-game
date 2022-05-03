@@ -7,7 +7,7 @@ namespace Spaceships.UI
     {
         [HideInInspector] public UnityEvent onShow = new UnityEvent();
         [HideInInspector] public UnityEvent onHide = new UnityEvent();
-        
+
         [SerializeField] private GameObject content;
         private bool shown;
 

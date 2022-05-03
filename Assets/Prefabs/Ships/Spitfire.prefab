@@ -74,6 +74,7 @@ GameObject:
   - component: {fileID: 6155240812619417324}
   - component: {fileID: 5561480068738338289}
   - component: {fileID: 5763940578026376671}
+  - component: {fileID: 7094195728564074033}
   m_Layer: 6
   m_Name: Spitfire
   m_TagString: Untagged
@@ -155,19 +156,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a11e9f95f35a44b299a2bf451cebf13f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  onWarp:
-    m_PersistentCalls:
-      m_Calls: []
-  onShoot:
-    m_PersistentCalls:
-      m_Calls: []
   shipData: {fileID: 11400000, guid: f72b6429480e9244fbabca3339cc859c, type: 2}
-  gunParent: {fileID: 6155240811839689016}
   rotationInput: 0
   thrustInput: 0
   strafeInput: 0
   forwardVelocity: 0
   rotationVelocity: 0
+--- !u!114 &7094195728564074033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6155240812619417315}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c87a66e8b67b479d834fb890127d17f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gunParent: {fileID: 6155240811839689016}
+  standing: {fileID: 0}
 --- !u!1 &6155240813065882349
 GameObject:
   m_ObjectHideFlags: 0

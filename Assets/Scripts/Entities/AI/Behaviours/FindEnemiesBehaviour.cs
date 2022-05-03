@@ -7,8 +7,9 @@ namespace Spaceships.Entities.AI.Behaviours
     public class FindEnemiesBehaviour : AIDataBehaviour
     {
         [SerializeField] private float viewRadius = 100;
-        private readonly List<Ship> enemies = new List<Ship>();
+        private readonly List<ShipCombat> enemies = new List<ShipCombat>();
         private List<Standing> enemyFactions;
+        private ShipCombat shipCombat;
 
         public override void Tick()
         {
@@ -16,47 +17,50 @@ namespace Spaceships.Entities.AI.Behaviours
             Collider2D[] ships = Physics2D.OverlapCircleAll(ship.transform.position, viewRadius);
             foreach (Collider2D target in ships)
             {
-                Ship targetShip = target.GetComponent<Ship>();
+                ShipCombat targetShip = target.GetComponent<ShipCombat>();
                 if (targetShip != null && enemyFactions.Contains(targetShip.Standing))
                 {
                     float currentDistance = Vector2.Distance(ship.transform.position, target.transform.position);
-                    for (int i = 0; i <= enemies.Count; i++)
-                    {
-                        if (i == enemies.Count)
-                        {
-                            AddEnemy(targetShip, enemies.Count);
-                            break;
-                        }
-
-                        if (Vector2.Distance(enemies[i].transform.position, ship.transform.position) > currentDistance)
-                        {
-                            AddEnemy(targetShip, i);
-                            break;
-                        }
-                    }
+                    InsertEnemyByRange(targetShip, currentDistance);
                 }
             }
         }
 
-        private void AddEnemy(Ship addedShip, int index)
+        private void InsertEnemyByRange(ShipCombat enemy, float distance)
+        {
+            for (int i = 0; i <= enemies.Count; i++)
+            {
+                if (i == enemies.Count)
+                {
+                    AddEnemy(enemy, enemies.Count);
+                    break;
+                }
+
+                if (Vector2.Distance(enemies[i].transform.position, enemy.transform.position) > distance)
+                {
+                    AddEnemy(enemy, i);
+                    break;
+                }
+            }
+        }
+
+        private void AddEnemy(ShipCombat addedShip, int index)
         {
             enemies.Insert(index, addedShip);
-            addedShip.OnDie.AddListener(() =>
-            {
-                enemies.Remove(addedShip);
-            });
+            addedShip.OnDie.AddListener(() => { enemies.Remove(addedShip); });
         }
 
         public override void Setup(Ship ship, ShipAI shipAI)
         {
             base.Setup(ship, shipAI);
 
-            enemyFactions = ship.Standing.GetEnemies();
+            shipCombat = ship.GetComponent<ShipCombat>();
+            enemyFactions = shipCombat.Standing.GetEnemies();
         }
 
         public bool EnemyWithinRange(float distance)
         {
-            foreach (Ship enemy in enemies)
+            foreach (ShipCombat enemy in enemies)
             {
                 if (Vector2.Distance(ship.transform.position, enemy.transform.position) <= distance)
                 {
@@ -72,11 +76,11 @@ namespace Spaceships.Entities.AI.Behaviours
             return enemies.Count;
         }
 
-        public (Ship, float) GetClosestEnemy()
+        public (ShipCombat, float) GetClosestEnemy()
         {
             float closestDistance = Mathf.Infinity;
-            Ship closestEnemy = null;
-            foreach (Ship enemy in enemies)
+            ShipCombat closestEnemy = null;
+            foreach (ShipCombat enemy in enemies)
             {
                 float distance = Vector2.Distance(enemy.transform.position, ship.transform.position);
                 if (distance < closestDistance)

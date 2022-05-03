@@ -3,15 +3,15 @@
 namespace Spaceships.Entities.AI.Behaviours
 {
     [RequireComponent(typeof(FindEnemiesBehaviour))]
-    public class AttackEnemyBehaviour : AIBehaviour
+    public class AttackEnemyBehaviour : AICombatBehaviour
     {
         [SerializeField] private float shootDistance = 25;
         private FindEnemiesBehaviour enemyFinder;
-        
+
         public override void Setup(Ship ship, ShipAI shipAI)
         {
             base.Setup(ship, shipAI);
-            
+
             enemyFinder = GetComponent<FindEnemiesBehaviour>();
         }
 
@@ -22,9 +22,9 @@ namespace Spaceships.Entities.AI.Behaviours
 
         public override void Tick()
         {
-            (Ship closestEnemy, float distance) = enemyFinder.GetClosestEnemy();
+            (ShipCombat closestEnemy, float distance) = enemyFinder.GetClosestEnemy();
             if (distance <= shootDistance)
-                ship.Shoot(closestEnemy.transform.position);
+                shipCombat.Shoot(closestEnemy.transform.position);
         }
     }
 }

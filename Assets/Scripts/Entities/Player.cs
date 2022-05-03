@@ -7,6 +7,7 @@ namespace Spaceships.Entities
     {
         public static Interactable availableInteractable;
         public static Ship ship;
+        public static ShipCombat shipCombat;
         [SerializeField] private float interactRadius = 10;
         [SerializeField] private LayerMask interactMask;
 
@@ -21,11 +22,11 @@ namespace Spaceships.Entities
             ship.strafeInput = InputController.strafeInput;
             ship.rotationInput = InputController.rotationInput;
             if (InputController.shootInput)
-                ship.Shoot(InputController.mouseWorldPosition);
+                shipCombat.Shoot(InputController.mouseWorldPosition);
 
-            Collider2D[] interactables =
-                Physics2D.OverlapCircleAll(ship.transform.position, interactRadius, interactMask);
+
             availableInteractable = null;
+            Collider2D[] interactables = GetNearbyInteractables();
             foreach (Collider2D item in interactables)
             {
                 Interactable interactable = item.GetComponent<Interactable>();
@@ -37,6 +38,13 @@ namespace Spaceships.Entities
                     break;
                 }
             }
+        }
+
+        private Collider2D[] GetNearbyInteractables()
+        {
+            Collider2D[] interactables =
+                Physics2D.OverlapCircleAll(ship.transform.position, interactRadius, interactMask);
+            return interactables;
         }
 
         private void Interact(Interactable interactable)

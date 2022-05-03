@@ -1,11 +1,11 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Spaceships.UI
 {
     public class WindowManager : MonoBehaviour
     {
         private Window shownWindow;
+
         private void Start()
         {
             Window[] allWindows = FindObjectsOfType<Window>();
@@ -20,11 +20,8 @@ namespace Spaceships.UI
 
                     shownWindow = window;
                 });
-                
-                window.onHide.AddListener(() =>
-                {
-                    shownWindow = null;
-                });
+
+                window.onHide.AddListener(() => { shownWindow = null; });
             }
         }
     }

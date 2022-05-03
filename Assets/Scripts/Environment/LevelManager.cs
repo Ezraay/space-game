@@ -12,9 +12,9 @@ namespace Spaceships.Environment
         [SerializeField] private string levelToLoad = "New Level";
         [SerializeField] private ShipData testingShip;
         [SerializeField] private Standing playerStanding;
+        private readonly Dictionary<string, Level> levelData = new Dictionary<string, Level>();
 
         private Level currentLevel;
-        private readonly Dictionary<string, Level> levelData = new Dictionary<string, Level>();
 
         private void Start()
         {
@@ -30,9 +30,12 @@ namespace Spaceships.Environment
 
             LoadLevel(levelToLoad);
             SpaceData.playerShipID ??= testingShip.ID;
-            currentLevel.SpawnPlayer(SpaceData.playerShipID, playerStanding); 
+            ShipData shipData = ShipFactory.GetShipData(SpaceData.playerShipID);
+            currentLevel.SpawnPlayer(shipData, playerStanding);
         }
 
+        
+        
         private void UnloadLevel()
         {
             // Destroy the current level object

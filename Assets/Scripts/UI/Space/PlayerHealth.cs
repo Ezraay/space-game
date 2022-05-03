@@ -7,17 +7,10 @@ namespace Spaceships.UI.Space
     public class PlayerHealth : Window
     {
         [SerializeField] private Slider healthSlider;
-        [SerializeField] private int segments;
 
-        protected override void Start()
+        public void UpdateHealth(ShipCombat ship)
         {
-            UpdateHealth();
-            Player.ship.OnHealthChange.AddListener(UpdateHealth);
-        }
-
-        private void UpdateHealth()
-        {
-            float percentage = Player.ship.Health / Player.ship.MaxHealth;
+            float percentage = ship.Health / ship.MaxHealth;
             healthSlider.value = percentage;
         }
     }

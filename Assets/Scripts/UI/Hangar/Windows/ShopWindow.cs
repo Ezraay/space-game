@@ -14,10 +14,10 @@ namespace Spaceships.UI.Hangar.Windows
         {
             base.Start();
 
-            foreach (Ship ship in ShipFactory.shipData.Values)
+            foreach (ShipData shipData in ShipFactory.GetAllShipData())
             {
                 ShopSlot newSlot = Instantiate(slotPrefab, slotParent);
-                newSlot.Setup(ship.ShipData);
+                newSlot.Setup(shipData);
                 newSlot.onClick.AddListener(() => { TryBuy(newSlot.ShipData); });
             }
         }

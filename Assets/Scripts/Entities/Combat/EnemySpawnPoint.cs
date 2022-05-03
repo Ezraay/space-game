@@ -1,12 +1,7 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using Spaceships.Entities;
 using Spaceships.Entities.AI;
-using Spaceships.Entities.Combat;
 using UnityEngine;
 
-namespace Spaceships
+namespace Spaceships.Entities.Combat
 {
     public class EnemySpawnPoint : MonoBehaviour
     {
@@ -19,7 +14,7 @@ namespace Spaceships
         {
             if (currentShip == null)
             {
-                currentShip = ShipFactory.SpawnAIShip(ship.ID, standing, personality, transform.position, Quaternion.identity);
+                currentShip = ShipFactory.SpawnAIShip(ship, standing, personality, transform.position, Quaternion.identity);
             }
         }
     }

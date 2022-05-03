@@ -5,8 +5,8 @@ namespace Spaceships.Entities.Combat
 {
     public class StandingManager : MonoBehaviour
     {
-        [SerializeField] private List<Standing> standings;
         private static readonly Dictionary<string, Standing> AllStandings = new Dictionary<string, Standing>();
+        [SerializeField] private List<Standing> standings;
 
         private void Start()
         {
@@ -32,7 +32,7 @@ namespace Spaceships.Entities.Combat
                     return alignmentRelationship.Relationship;
                 }
             }
-            
+
             Debug.LogError($"No relationship for {first.Name} - {second.Name}");
             return 0;
         }

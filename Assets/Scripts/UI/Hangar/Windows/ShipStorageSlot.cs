@@ -15,13 +15,11 @@ namespace Spaceships.UI.Hangar.Windows
         [SerializeField] private Text equippedText;
 
         private Button button;
-        private ShipData shipData;
 
 
         public void Setup(ShipData shipData)
         {
             button = GetComponent<Button>();
-            this.shipData = shipData;
 
             titleText.text = shipData.Name;
             tierText.text = $"Tier {RomanNumeral.Convert(shipData.Tier)}";

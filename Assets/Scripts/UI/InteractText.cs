@@ -1,5 +1,4 @@
 using Spaceships.Entities;
-using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -7,7 +6,6 @@ namespace Spaceships.UI
 {
     public class InteractText : MonoBehaviour
     {
-        // [SerializeField] private Vector2 offset;
         [SerializeField] private GameObject parent;
         [SerializeField] private Text text;
 
