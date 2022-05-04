@@ -10,6 +10,7 @@ namespace Spaceships.UI.Space
 
         public void UpdateHealth(ShipCombat ship)
         {
+            Show();
             float percentage = ship.Health / ship.MaxHealth;
             healthSlider.value = percentage;
         }
