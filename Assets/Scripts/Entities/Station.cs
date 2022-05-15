@@ -17,10 +17,18 @@ namespace Spaceships.Entities
         [SerializeField] private AIPersonality randomShipPersonality;
         [SerializeField] private Standing randomShipStanding;
         [SerializeField] private new string name = "New Station";
+        [SerializeField] private float interactRadius = 10;
         private readonly List<Transform> spawns = new List<Transform>();
 
         private float spawnCooldown;
         public override string InteractText => "Board Station";
+        public override float InteractRadius => interactRadius;
+
+        public override void Interact()
+        {
+            HangarData.stationName = name;
+            Loader.LoadHangar();
+        }
 
         private void Awake()
         {
@@ -37,6 +45,11 @@ namespace Spaceships.Entities
             spawnCooldown -= Time.deltaTime;
             if (spawnCooldown < 0)
                 SpawnRandomShip();
+        }
+
+        private void OnDrawGizmosSelected()
+        {
+            Gizmos.DrawWireSphere(transform.position, interactRadius);
         }
 
         private void SpawnRandomShip()
@@ -56,12 +69,6 @@ namespace Spaceships.Entities
             Ship ship = ShipFactory.SpawnShip(shipToSpawn, standing, spawn.position, spawn.rotation);
             ship.forwardVelocity = ship.ShipData.ForwardSpeed;
             return ship;
-        }
-
-        public override void Interact()
-        {
-            HangarData.stationName = name;
-            Loader.LoadHangar();
         }
     }
 }

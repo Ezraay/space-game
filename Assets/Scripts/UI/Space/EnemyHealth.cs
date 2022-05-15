@@ -5,8 +5,9 @@ using UnityEngine.UI;
 
 namespace Spaceships.UI.Space
 {
-    public class EnemyHealth : Window
+    public class EnemyHealth : MonoBehaviour
     {
+        [SerializeField] private GameObject content;
         [SerializeField] private Slider healthSlider;
         [SerializeField] private Text damageableText;
         [SerializeField] private Image fillImage;
@@ -22,6 +23,16 @@ namespace Spaceships.UI.Space
             SetColour(ship ? ship.Standing.Colour : noStandingColour);
 
             damageableText.text = damageable.Name;
+        }
+
+        public void Show()
+        {
+            content.SetActive(true);
+        }
+
+        public void Hide()
+        {
+            content.SetActive(false);
         }
 
         private void SetColour(Color color)

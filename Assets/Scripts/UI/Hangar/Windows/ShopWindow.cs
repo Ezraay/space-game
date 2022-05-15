@@ -20,6 +20,8 @@ namespace Spaceships.UI.Hangar.Windows
                 newSlot.Setup(shipData);
                 newSlot.onClick.AddListener(() => { TryBuy(newSlot.ShipData); });
             }
+            
+            SetTitle("Shop");
         }
 
         private void TryBuy(ShipData data)

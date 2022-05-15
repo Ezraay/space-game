@@ -57,7 +57,7 @@ namespace Spaceships.Entities
 
         private void OnDestroy()
         {
-            OnDie.Invoke();
+            // OnDie.Invoke();
         }
 
 

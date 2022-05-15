@@ -1,41 +1,72 @@
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 namespace Spaceships.UI
 {
-    public class Window : Element
+    public class Window : MonoBehaviour, IPointerDownHandler
     {
-        [HideInInspector] public UnityEvent onShow = new UnityEvent();
-        [HideInInspector] public UnityEvent onHide = new UnityEvent();
-
-        [SerializeField] private GameObject content;
+        [SerializeField] protected WindowDragBar dragBar;
+        [SerializeField] private Image dragVisual;
+        [HideInInspector] public RectTransform rectTransform;
+        [SerializeField] private Text titleText;
         private bool shown;
+        public UnityEvent OnShow { get; } = new UnityEvent();
+        public UnityEvent OnClose { get; } = new UnityEvent();
+
+
+        public void OnPointerDown(PointerEventData eventData)
+        {
+            transform.SetAsLastSibling();
+        }
 
         protected virtual void Start()
         {
-            Hide();
+            rectTransform = GetComponent<RectTransform>();
+            dragBar.Setup(this);
+        }
+        
+        protected void SetTitle(string title)
+        {
+            titleText.text = title;
         }
 
         public virtual void Show()
         {
-            content.SetActive(true);
+            dragBar.gameObject.SetActive(true);
             shown = true;
-            onShow.Invoke();
+            OnShow.Invoke();
         }
 
-        public virtual void Hide()
+        public virtual void Close()
         {
-            content.SetActive(false);
-            shown = false;
-            onHide.Invoke();
+            OnClose.Invoke();
+            Destroy(gameObject);
         }
 
         public void Toggle()
         {
             if (shown)
-                Hide();
+                Close();
             else
                 Show();
         }
+
+        public void ShowDragVisual()
+        {
+            dragVisual.enabled = true;
+        }
+
+        public void HideDragVisual()
+        {
+            dragVisual.enabled = false;
+        }
+
+        public virtual void OnDragOnto(DraggableSlot slot)
+        {
+        }
+
+        // public virtual bool CanDragOnto(DraggableSlot slot) => false;
     }
 }

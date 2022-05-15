@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 723052786793981730}
   - component: {fileID: 90947208702492039}
-  - component: {fileID: 773194782902705654}
   m_Layer: 3
   m_Name: Space Station
   m_TagString: Untagged
@@ -56,22 +55,7 @@ MonoBehaviour:
   randomShipPersonality: {fileID: -8811996589724289028, guid: 95d92fc65d40de346a4da47f31f7393e, type: 3}
   randomShipStanding: {fileID: 11400000, guid: cf504a7220041c74d910031ed290f1ed, type: 2}
   name: Tyr
---- !u!58 &773194782902705654
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 90947208702492056}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 65
+  interactRadius: 47
 --- !u!1 &2503074880580650316
 GameObject:
   m_ObjectHideFlags: 0

@@ -7,7 +7,7 @@ using UnityEngine.UI;
 namespace Spaceships.UI.Hangar.Windows
 {
     [RequireComponent(typeof(Button))]
-    public class ShopSlot : Element
+    public class ShopSlot : MonoBehaviour
     {
         [HideInInspector] public UnityEvent onClick = new UnityEvent();
 

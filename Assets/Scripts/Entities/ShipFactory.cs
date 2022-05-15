@@ -47,11 +47,11 @@ namespace Spaceships.Entities
         }
 
         public static Ship SpawnAIShip(ShipData shipToSpawn, Standing standing, AIPersonality personality, Vector3 position,
-            Quaternion rotation)
+            Quaternion rotation, LootTable lootTable)
         {
             Ship ship = SpawnShip(shipToSpawn, standing, position, rotation);
             ShipAI shipAI = ship.gameObject.AddComponent<ShipAI>();
-            shipAI.Setup(personality);
+            shipAI.Setup(personality, lootTable);
             return ship;
         }
 

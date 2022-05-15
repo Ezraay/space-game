@@ -29,6 +29,7 @@ namespace Spaceships.Entities
         [BoxGroup("Item")] [SerializeField] [Min(0)] private int creditCost = 1000;
         [BoxGroup("Item")] [SerializeField] [Range(1, 10)] private int tier = 1;
         [BoxGroup("Item")] [SerializeField] private Sprite sprite;
+        [BoxGroup("Item")] [SerializeField] private float cargoSize = 1000;
 
         public string Name => name;
         public string ID => id;
@@ -52,5 +53,6 @@ namespace Spaceships.Entities
         public int CreditCost => creditCost;
         public int Tier => tier;
         public Sprite Sprite => sprite;
+        public float CargoSize => cargoSize;
     }
 }

@@ -1,4 +1,7 @@
-﻿using Spaceships.Environment;
+﻿using System.Collections.Generic;
+using System.Runtime.CompilerServices;
+using Spaceships.Environment;
+using Spaceships.ItemSystem.Items;
 using UnityEngine;
 
 namespace Spaceships.Entities
@@ -9,10 +12,17 @@ namespace Spaceships.Entities
         public static Ship ship;
         public static ShipCombat shipCombat;
         [SerializeField] private float interactRadius = 10;
-        [SerializeField] private LayerMask interactMask;
 
         public Vector3 Position => ship == null ? Vector3.zero : ship.transform.position;
+        public static ShipInventory Inventory { get; private set; }
 
+        public static void SetShip(Ship ship)
+        {
+            Player.ship = ship;
+            shipCombat = ship.GetComponent<ShipCombat>();
+            Inventory = new ShipInventory(ship.ShipData);
+        }        
+        
         protected void Update()
         {
             if (ship == null)
@@ -21,30 +31,31 @@ namespace Spaceships.Entities
             ship.thrustInput = InputController.thrustInput;
             ship.strafeInput = InputController.strafeInput;
             ship.rotationInput = InputController.rotationInput;
-            if (InputController.shootInput)
+            if (InputController.leftMouseDown)
                 shipCombat.Shoot(InputController.mouseWorldPosition);
 
 
             availableInteractable = null;
-            Collider2D[] interactables = GetNearbyInteractables();
-            foreach (Collider2D item in interactables)
+            List<Interactable> interactables = GetNearbyInteractables();
+            foreach (Interactable item in interactables)
             {
-                Interactable interactable = item.GetComponent<Interactable>();
-                if (interactable != null)
-                {
-                    if (InputController.interactInput)
-                        Interact(interactable);
-                    availableInteractable = interactable;
-                    break;
-                }
+                if (InputController.interactInput)
+                    Interact(item);
+                availableInteractable = item;
+                break;
             }
         }
 
-        private Collider2D[] GetNearbyInteractables()
+        private List<Interactable> GetNearbyInteractables()
         {
-            Collider2D[] interactables =
-                Physics2D.OverlapCircleAll(ship.transform.position, interactRadius, interactMask);
-            return interactables;
+            List<Interactable> result = new List<Interactable>();
+            foreach (Interactable interactable in Interactable.AllInteractables)
+            {
+                float distance = Vector2.Distance(interactable.transform.position, ship.transform.position);
+                if (distance <= interactable.InteractRadius + interactRadius)
+                    result.Add(interactable);
+            }
+            return result;
         }
 
         private void Interact(Interactable interactable)

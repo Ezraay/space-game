@@ -8,6 +8,7 @@ namespace Spaceships.Entities.AI
     {
         private AIPersonality personality;
         private Ship ship;
+        public LootTable LootTable { get; private set; }
 
         private void Update()
         {
@@ -47,7 +48,7 @@ namespace Spaceships.Entities.AI
             return highestBehaviours;
         }
 
-        public void Setup(AIPersonality personalityPrefab)
+        public void Setup(AIPersonality personalityPrefab, LootTable lootTable = null)
         {
             personality = Instantiate(personalityPrefab, transform);
             ship = GetComponent<Ship>();
@@ -60,6 +61,15 @@ namespace Spaceships.Entities.AI
             foreach (AIBehaviour behaviour in personality.Behaviours)
             {
                 behaviour.Setup(ship, this);
+            }
+            
+            if (lootTable != null)
+            {
+                ShipCombat shipCombat = GetComponent<ShipCombat>();
+                if (shipCombat == null) 
+                    Debug.LogError("Got loot table but no combat present");
+                DropsLoot dropsLoot = gameObject.AddComponent<DropsLoot>();
+                dropsLoot.Setup(shipCombat, lootTable);
             }
         }
     }

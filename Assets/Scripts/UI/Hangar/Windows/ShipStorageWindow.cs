@@ -18,6 +18,7 @@ namespace Spaceships.UI.Hangar.Windows
 
             HangarManager.ShipStorage.onAdd.AddListener(shipData =>
                 AddSlot(shipData, HangarManager.ShipStorage.items.Count - 1));
+            SetTitle("Ship Hangar");
         }
 
         private void CreateAllSlots()

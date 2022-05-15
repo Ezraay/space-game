@@ -16,8 +16,9 @@ namespace Spaceships.Environment
         {
             // Spawns the player in the current level
             Ship spawnedShip = mainStation.SummonShip(shipData, playerStanding);
-            Player.ship = spawnedShip;
-            Player.shipCombat = spawnedShip.GetComponent<ShipCombat>();
+            Player.SetShip(spawnedShip);
+            // Player.ship = spawnedShip;
+            // Player.shipCombat = spawnedShip.GetComponent<ShipCombat>();
         }
     }
 }
