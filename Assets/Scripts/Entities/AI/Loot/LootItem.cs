@@ -12,14 +12,15 @@ namespace Spaceships.Entities.AI.Loot
         public float DropChance => dropChance;
 
         [SerializeField, OnValueChanged("UpdateTitle")] private ItemData itemData;
-        [SerializeField, MinMaxSlider(1, 100)] public Vector2Int countRange = new Vector2Int(1, 10);
+        [SerializeField] private int minCount = 1;
+        [SerializeField] private int maxCount = 10;
 
  
         public Item AddItem()
         {
             if (itemData == null)
                 return null;
-            int count = Random.Range(countRange.x, countRange.y + 1);
+            int count = Random.Range(minCount, maxCount + 1);
             return ItemFactory.CreateItem(itemData, count);
         }
     }

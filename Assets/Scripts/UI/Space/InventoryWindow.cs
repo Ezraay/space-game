@@ -1,4 +1,3 @@
-using System;
 using Spaceships.ItemSystem;
 using Spaceships.ItemSystem.Items;
 using UnityEngine;
@@ -10,7 +9,17 @@ namespace Spaceships.UI.Space
     {
         [SerializeField] private ItemSlot slotPrefab;
         [SerializeField] private Transform slotParent;
+        [SerializeField] private GameObject weightParent;
+        [SerializeField] private Slider weightSlider;
+        [SerializeField] private Text weightText;
         private Inventory<Item> inventory;
+        private bool updateWeight;
+
+        private void OnDestroy()
+        {
+            inventory.OnItemAdded.RemoveListener(OnItemAdded);
+            inventory.OnItemRemoved.RemoveListener(OnItemRemoved);
+        }
 
 
         public void Setup(Inventory<Item> inventory)
@@ -23,26 +32,43 @@ namespace Spaceships.UI.Space
 
             inventory.OnItemAdded.AddListener(OnItemAdded);
             inventory.OnItemRemoved.AddListener(OnItemRemoved);
-            
+
+            updateWeight = inventory is ShipInventory;
+            if (updateWeight)
+                UpdateWeightView();
+            else 
+                Destroy(weightParent);
+
             SetTitle(inventory.Name);
         }
 
-        public bool CanAddItem(Item item) => inventory.CanAddItem(item);
-
-        private void OnDestroy()
+        public bool CanAddItem(Item item)
         {
-            inventory.OnItemAdded.RemoveListener(OnItemAdded);
-            inventory.OnItemRemoved.RemoveListener(OnItemRemoved);
+            return inventory.CanAddItem(item);
         }
 
         private void OnItemAdded(int index, Item item)
         {
             AddSlot(item);
+            UpdateWeightView();
         }
 
         private void OnItemRemoved(int index, Item item)
         {
             RemoveSlot(index);
+            UpdateWeightView();
+        }
+
+        private void UpdateWeightView()
+        {
+            if (!updateWeight) return;
+            
+            ShipInventory shipInventory = inventory as ShipInventory;
+            Debug.Log(shipInventory.Weight);
+            float weight = (float) shipInventory.Weight;
+            float maxWeight = (float) shipInventory.MaxWeight;
+            weightSlider.value = weight / maxWeight;
+            weightText.text = $"{shipInventory.Weight}/{shipInventory.MaxWeight}kg";
         }
 
         private void AddSlot(Item item)
@@ -62,6 +88,8 @@ namespace Spaceships.UI.Space
             if (itemSlot == null)
                 Debug.Log("Item slot is null");
             Item item = itemSlot.Item;
+            if (!this.inventory.CanAddItem(item))
+                Debug.LogError("Can't add item, inventory full");
             Inventory<Item> inventory = itemSlot.Inventory;
             inventory.RemoveItem(item);
             this.inventory.AddItem(item);

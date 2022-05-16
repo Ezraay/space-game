@@ -10,7 +10,7 @@ namespace Spaceships.ItemSystem.Items
         public Sprite Sprite => data.Sprite;
         public int Count { get; private set; }
 
-        public float Weight { get; }
+        public float Weight => data.Weight;
         public float TotalWeight => Count * Weight;
 
         public Item(ItemData data, int count)

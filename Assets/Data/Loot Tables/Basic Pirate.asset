@@ -15,7 +15,8 @@ MonoBehaviour:
   lootItems:
   - dropChance: 1
     itemData: {fileID: 11400000, guid: 227a4998047754b49b7d789bf4eda892, type: 2}
-    countRange: {x: 30, y: 40}
+    minCount: 30
+    maxCount: 50
   dropsCredits: 1
   minCredits: 100
   maxCredits: 1000

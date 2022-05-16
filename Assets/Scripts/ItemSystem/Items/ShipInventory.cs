@@ -21,14 +21,14 @@ namespace Spaceships.ItemSystem.Items
 
         public override void AddItem(Item item)
         {
+            Weight += item.TotalWeight;
             base.AddItem(item);
-            Weight += item.Weight;
         }
 
         public override void RemoveItem(Item item)
         {
+            Weight -= item.TotalWeight;
             base.RemoveItem(item);
-            Weight -= item.Weight;
         }
 
         public override bool ContainsItem(string id, int count)
