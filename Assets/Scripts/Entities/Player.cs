@@ -2,6 +2,7 @@
 using System.Runtime.CompilerServices;
 using Spaceships.Environment;
 using Spaceships.ItemSystem.Items;
+using Spaceships.SceneTransitions;
 using UnityEngine;
 
 namespace Spaceships.Entities
@@ -20,8 +21,20 @@ namespace Spaceships.Entities
         {
             Player.ship = ship;
             shipCombat = ship.GetComponent<ShipCombat>();
+            shipCombat.OnDie.AddListener(() =>
+            {
+                SpaceData.playerShipID = null;
+                HangarData.stationName = LevelManager.StationName;
+                Loader.LoadHangar();
+            });
             Inventory = new ShipInventory(ship.ShipData);
-        }        
+        }
+
+        public static float DistanceTo(Vector3 position)
+        {
+            if (ship == null) return 0;
+            return Vector2.Distance(ship.transform.position, position);
+        }
         
         protected void Update()
         {

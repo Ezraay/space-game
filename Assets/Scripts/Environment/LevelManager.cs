@@ -12,9 +12,10 @@ namespace Spaceships.Environment
         [SerializeField] private string levelToLoad = "New Level";
         [SerializeField] private ShipData testingShip;
         [SerializeField] private Standing playerStanding;
+        public static string StationName => currentLevel.mainStation.Name;
         private readonly Dictionary<string, Level> levelData = new Dictionary<string, Level>();
 
-        private Level currentLevel;
+        private static Level currentLevel;
 
         private void Awake()
         {

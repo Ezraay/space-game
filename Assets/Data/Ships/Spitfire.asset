@@ -26,6 +26,9 @@ MonoBehaviour:
   shotsPerClick: 1
   maxHealth: 10
   damagePerShot: 1
+  pierce: 1
+  healthRegen: 1
   creditCost: 1000
   tier: 3
   sprite: {fileID: 21300000, guid: e63e0498284944b47a35c0dcf291fbed, type: 3}
+  cargoSize: 1000

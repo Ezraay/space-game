@@ -23,6 +23,7 @@ namespace Spaceships.Entities
         private float spawnCooldown;
         public override string InteractText => "Board Station";
         public override float InteractRadius => interactRadius;
+        public string Name => name;
 
         public override void Interact()
         {

@@ -32,6 +32,12 @@ namespace Spaceships.Entities
                 Die();
         }
 
+        public void Heal(float amount)
+        {
+            Health += amount;
+            Health = Mathf.Min(MaxHealth, Health);
+        }
+        
         public void Die()
         {
             OnDie.Invoke();
@@ -53,6 +59,7 @@ namespace Spaceships.Entities
         private void Update()
         {
             shotCooldown = Mathf.Max(0, shotCooldown - Time.deltaTime);
+            Heal(ShipData.HealthRegen * Time.deltaTime);
         }
 
         private void OnDestroy()

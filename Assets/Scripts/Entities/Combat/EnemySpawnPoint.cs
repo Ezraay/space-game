@@ -24,7 +24,7 @@ namespace Spaceships.Entities.Combat
 
         private bool CanSpawn()
         {
-            return currentShip == null && Vector2.Distance(Player.ship.transform.position, transform.position) > spawnBlockSize;
+            return currentShip == null && Player.DistanceTo(transform.position) > spawnBlockSize;
         }
 
         private void SpawnShip()

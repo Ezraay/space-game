@@ -15,8 +15,7 @@ namespace Spaceships.Utility
                 active = true;
                 DontDestroyOnLoad(gameObject);
 
-                Application.targetFrameRate = -1;
-                // Application.targetFrameRate = 60; // Not sure where else to put this
+                Application.targetFrameRate = Application.isEditor ? 1000 : 60;
             }
         }
     }

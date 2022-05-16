@@ -10,25 +10,25 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 350c706b56004cceae52a27ac5cbd844, type: 3}
-  m_Name: Dispatcher
+  m_Name: Spitfire 2
   m_EditorClassIdentifier: 
-  name: Dispatcher
-  id: dispatcher
-  forwardSpeed: 6
-  backwardSpeed: 0.5
-  strafeSpeed: 1
-  rotateSpeed: 50
-  acceleration: 3
-  rotateAcceleration: 25
-  tiltAmount: 35
-  shotCooldown: 0.1
+  name: Spitfire
+  id: spitfire_2
+  forwardSpeed: 30
+  backwardSpeed: 3
+  strafeSpeed: 4
+  rotateSpeed: 120
+  acceleration: 60
+  rotateAcceleration: 450
+  tiltAmount: 25
+  shotCooldown: 0.2
   projectile: {fileID: 4548026034678658014, guid: 48cac5bc6b4960445a1f0865043f90f0, type: 3}
-  shotsPerClick: 2
-  maxHealth: 10
+  shotsPerClick: 1
+  maxHealth: 100
   damagePerShot: 1
-  pierce: 1
+  pierce: 2
   healthRegen: 1
-  creditCost: 5000
-  tier: 10
-  sprite: {fileID: 21300000, guid: 1793bc719013d4d4c930c9c8fde14ea2, type: 3}
-  cargoSize: 1000
+  creditCost: 10000
+  tier: 5
+  sprite: {fileID: 21300000, guid: e63e0498284944b47a35c0dcf291fbed, type: 3}
+  cargoSize: 2000

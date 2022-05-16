@@ -46,6 +46,7 @@ MonoBehaviour:
   ships:
   - {fileID: 8503304989310176176, guid: 9b61ee2e2547a8448b3318b91668db45, type: 3}
   - {fileID: 5763940578026376671, guid: 0a95657792139bc4eb1063a94cd40f91, type: 3}
+  - {fileID: 6757369992930306229, guid: 2e7e4bb1192213f4db447200483f316e, type: 3}
 --- !u!1 &1234709500
 GameObject:
   m_ObjectHideFlags: 0
