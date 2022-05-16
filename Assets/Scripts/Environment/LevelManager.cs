@@ -16,7 +16,7 @@ namespace Spaceships.Environment
 
         private Level currentLevel;
 
-        private void Start()
+        private void Awake()
         {
             foreach (Level level in FindObjectsOfType<Level>())
             {

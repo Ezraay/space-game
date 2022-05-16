@@ -451,7 +451,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dragBar: {fileID: 5240031108128048679}
+  dragVisual: {fileID: 0}
   rectTransform: {fileID: 0}
+  titleText: {fileID: 1358005234522286621}
   slotPrefab: {fileID: 2739219614540211615, guid: 8fd0cf9bfd233f34384a4507132c2dea, type: 3}
   slotParent: {fileID: 5679698466729936883}
 --- !u!1 &6977648088945769774
