@@ -24,5 +24,10 @@ namespace Spaceships.ItemSystem.Items
             Item item = new Item(data, count);
             return item;
         }
+
+        public static Item CreateItem(ItemData data, int count = 1)
+        {
+            return CreateItem(data.ID, count);
+        }
     }
 }

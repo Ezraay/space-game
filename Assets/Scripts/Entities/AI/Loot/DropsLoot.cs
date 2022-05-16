@@ -2,7 +2,7 @@
 using Spaceships.ItemSystem.Items;
 using UnityEngine;
 
-namespace Spaceships.Entities.AI
+namespace Spaceships.Entities.AI.Loot
 {
     public class DropsLoot : MonoBehaviour
     {

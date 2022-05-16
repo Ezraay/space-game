@@ -12,7 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 112e4429592441388500c09acbb295bd, type: 3}
   m_Name: Basic Pirate
   m_EditorClassIdentifier: 
-  loot:
-  - item: {fileID: 11400000, guid: 227a4998047754b49b7d789bf4eda892, type: 2}
-    dropChance: 1
-    countRange: {x: 30, y: 60}
+  lootItems:
+  - dropChance: 1
+    itemData: {fileID: 11400000, guid: 227a4998047754b49b7d789bf4eda892, type: 2}
+    countRange: {x: 30, y: 40}
+  dropsCredits: 1
+  minCredits: 100
+  maxCredits: 1000

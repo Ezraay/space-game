@@ -1,5 +1,6 @@
 using System;
 using Spaceships.Entities.AI;
+using Spaceships.Entities.AI.Loot;
 using UnityEngine;
 
 namespace Spaceships.Entities.Combat

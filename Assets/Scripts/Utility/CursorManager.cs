@@ -1,9 +1,7 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Spaceships
+namespace Spaceships.Utility
 {
     public class CursorManager : MonoBehaviour
     {

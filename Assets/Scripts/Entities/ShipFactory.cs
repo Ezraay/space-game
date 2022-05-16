@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using Spaceships.Entities.AI;
+using Spaceships.Entities.AI.Loot;
 using Spaceships.Entities.Combat;
 using UnityEngine;
 

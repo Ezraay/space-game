@@ -1,11 +1,8 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
-using Spaceships.UI;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Spaceships
+namespace Spaceships.UI.Hangar
 {
     public class MenuBar : MonoBehaviour
     {

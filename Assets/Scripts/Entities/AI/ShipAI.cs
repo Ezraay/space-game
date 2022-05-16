@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Spaceships.Entities.AI.Loot;
 using UnityEngine;
 
 namespace Spaceships.Entities.AI
