@@ -1,13 +1,12 @@
 using UnityEngine;
 
-namespace Spaceships
+namespace Spaceships.Environment
 {
     public class Parallax : MonoBehaviour
     {
         [SerializeField] [Range(0f, 1f)] private float strength;
         [SerializeField] private Transform target;
 
-        // private Vector3 startingPosition;
         private Vector3 lastPosition;
         private float textureUnitSize;
 
@@ -17,7 +16,6 @@ namespace Spaceships
             Sprite sprite = renderer.sprite;
             Texture2D texture = sprite.texture;
             textureUnitSize = texture.width / sprite.pixelsPerUnit * transform.localScale.x;
-            Debug.Log(textureUnitSize);
         }
 
         private void LateUpdate()
@@ -25,11 +23,6 @@ namespace Spaceships
             Vector3 deltaMovement = target.position - lastPosition;
             transform.position += new Vector3(deltaMovement.x * strength, deltaMovement.y * strength);
             lastPosition = target.position;
-            // Vector2 distance = target.position * strength;
-
-            // Vector3 result = new Vector3(startingPosition.x + distance.x, startingPosition.y + distance.y,
-            //     startingPosition.z);
-            // transform.position = result;
 
             if (Mathf.Abs(target.position.x - transform.position.x) > textureUnitSize)
             {

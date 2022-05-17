@@ -12,6 +12,7 @@ namespace Spaceships.UI.Space
         
         [SerializeField] private RectTransform windowParent;
         [SerializeField] private InventoryWindow window;
+        [SerializeField] private ContainerInventoryWindow containerWindow;
         private InventoryWindow playerInventoryWindow;
             
         private void Start()
@@ -42,6 +43,13 @@ namespace Spaceships.UI.Space
         private static InventoryWindow ShowInventory(Inventory<Item> inventory)
         {
             InventoryWindow newWindow = Instantiate(instance.window, instance.windowParent);
+            newWindow.Setup(inventory);
+            return newWindow;
+        }
+
+        private static ContainerInventoryWindow ShowInventory(ContainerInventory inventory)
+        {
+            ContainerInventoryWindow newWindow = Instantiate(instance.containerWindow, instance.windowParent);
             newWindow.Setup(inventory);
             return newWindow;
         }

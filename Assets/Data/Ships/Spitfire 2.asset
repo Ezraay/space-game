@@ -25,7 +25,7 @@ MonoBehaviour:
   projectile: {fileID: 4548026034678658014, guid: 48cac5bc6b4960445a1f0865043f90f0, type: 3}
   shotsPerClick: 1
   maxHealth: 100
-  damagePerShot: 1
+  damagePerShot: 5
   pierce: 2
   healthRegen: 1
   creditCost: 10000

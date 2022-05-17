@@ -12,7 +12,7 @@ namespace Spaceships.UI.Space
         [SerializeField] private GameObject weightParent;
         [SerializeField] private Slider weightSlider;
         [SerializeField] private Text weightText;
-        private Inventory<Item> inventory;
+        protected Inventory<Item> inventory;
         private bool updateWeight;
 
         private void OnDestroy()
@@ -22,7 +22,7 @@ namespace Spaceships.UI.Space
         }
 
 
-        public void Setup(Inventory<Item> inventory)
+        public virtual void Setup(Inventory<Item> inventory)
         {
             this.inventory = inventory;
             foreach (Item item in inventory.GetItems())
@@ -64,7 +64,6 @@ namespace Spaceships.UI.Space
             if (!updateWeight) return;
             
             ShipInventory shipInventory = inventory as ShipInventory;
-            Debug.Log(shipInventory.Weight);
             float weight = (float) shipInventory.Weight;
             float maxWeight = (float) shipInventory.MaxWeight;
             weightSlider.value = weight / maxWeight;
