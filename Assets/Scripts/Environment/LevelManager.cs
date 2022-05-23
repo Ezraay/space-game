@@ -30,8 +30,10 @@ namespace Spaceships.Environment
             }
 
             LoadLevel(levelToLoad);
-            SpaceData.playerShipID ??= testingShip.ID;
-            ShipData shipData = ShipFactory.GetShipData(SpaceData.playerShipID);
+            // SpaceData.playerShipID ??= testingShip.ID;
+            // ShipData shipData = ShipFactory.GetShipData(SpaceData.playerShipID);
+            ShipData shipData = PlayerData.GetShipOrDefault(ShipFactory.GetShipData(testingShip.ID));
+            
             currentLevel.SpawnPlayer(shipData, playerStanding);
         }
 

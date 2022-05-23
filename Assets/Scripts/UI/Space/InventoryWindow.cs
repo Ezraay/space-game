@@ -17,6 +17,8 @@ namespace Spaceships.UI.Space
 
         private void OnDestroy()
         {
+            if (inventory == null) return;
+            
             inventory.OnItemAdded.RemoveListener(OnItemAdded);
             inventory.OnItemRemoved.RemoveListener(OnItemRemoved);
         }
@@ -24,6 +26,7 @@ namespace Spaceships.UI.Space
 
         public virtual void Setup(Inventory<Item> inventory)
         {
+            if (this.inventory != null) return; // Already set up
             this.inventory = inventory;
             foreach (Item item in inventory.GetItems())
             {
@@ -79,6 +82,13 @@ namespace Spaceships.UI.Space
         private void RemoveSlot(int index)
         {
             Destroy(slotParent.GetChild(index).gameObject);
+        }
+
+        public override bool CanDragOnto(DraggableSlot slot)
+        {
+            ItemSlot itemSlot = slot as ItemSlot;
+            if (itemSlot == null) return false;
+            return inventory.CanAddItem(itemSlot.Item);
         }
 
         public override void OnDragOnto(DraggableSlot slot)

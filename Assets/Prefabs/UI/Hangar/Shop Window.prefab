@@ -274,7 +274,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 9140720846156994202}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: Spaceships.UI.Window, Assembly-CSharp
         m_MethodName: Close
         m_Mode: 1
@@ -584,7 +584,6 @@ GameObject:
   - component: {fileID: 776679340499196398}
   - component: {fileID: 3879200954770517785}
   - component: {fileID: 4761833299777345388}
-  - component: {fileID: 9140720846156994202}
   - component: {fileID: 9140720846156994205}
   m_Layer: 5
   m_Name: Shop Window
@@ -653,22 +652,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 100
---- !u!114 &9140720846156994202
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9140720846156994203}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 044882e43670e4049b53e29402aa4d57, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dragBar: {fileID: 7714355860013700553}
-  dragVisual: {fileID: 0}
-  rectTransform: {fileID: 0}
-  titleText: {fileID: 0}
 --- !u!114 &9140720846156994205
 MonoBehaviour:
   m_ObjectHideFlags: 0

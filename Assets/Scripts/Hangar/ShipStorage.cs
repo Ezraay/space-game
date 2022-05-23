@@ -42,7 +42,8 @@ namespace Spaceships.Hangar
         public void SetActiveShip(int index)
         {
             ActiveShip = index;
-            SpaceData.playerShipID = items[index].ID;
+            // SpaceData.playerShipID = items[index].ID;
+            PlayerData.SetShip(items[index]);
         }
     }
 }

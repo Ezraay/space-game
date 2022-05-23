@@ -16,7 +16,7 @@ namespace Spaceships.UI
             {
                 windowHovering?.HideDragVisual();
                 windowHovering = window;
-                if (window != null && CanDragInto(window))
+                if (window != null && CanDragInto(window) && window.CanDragOnto(this))
                 {
                     window.ShowDragVisual();
                 }
@@ -27,7 +27,7 @@ namespace Spaceships.UI
 
         public void OnEndDrag(PointerEventData eventData)
         {
-            if (windowHovering != null && CanDragInto(windowHovering))
+            if (windowHovering != null && CanDragInto(windowHovering) && windowHovering.CanDragOnto(this))
             {
                 windowHovering.HideDragVisual();
                 windowHovering.OnDragOnto(this);
@@ -36,9 +36,9 @@ namespace Spaceships.UI
             draggableContent.anchoredPosition = Vector3.zero;
         }
 
-        protected virtual bool CanDragInto(Window window)
+        public virtual bool CanDragInto(Window window)
         {
-            return false;
+            return true; // Not really used
         }
     }
 }

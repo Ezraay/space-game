@@ -1376,7 +1376,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &512723021
 MonoBehaviour:
@@ -1490,7 +1490,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &528925594 stripped
 MonoBehaviour:
@@ -3666,7 +3666,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1416582776
 GameObject:
@@ -3714,7 +3714,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1428622585
 GameObject:
@@ -3851,7 +3851,7 @@ Transform:
   - {fileID: 799988483}
   - {fileID: 1798188885}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1543310069
 GameObject:
@@ -3893,7 +3893,7 @@ Transform:
   - {fileID: 650606145}
   - {fileID: 1616737304}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1569608202
 GameObject:
@@ -4758,52 +4758,6 @@ MonoBehaviour:
   standing: {fileID: 11400000, guid: 34f998ab30d4e334397ffe16ca366776, type: 2}
   lootTable: {fileID: 11400000, guid: 6273071123e5eee46b4d1ca436e0befc, type: 2}
   spawnBlockSize: 300
---- !u!1 &1941612918
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1941612920}
-  - component: {fileID: 1941612919}
-  m_Layer: 0
-  m_Name: Inventory Window Factory
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1941612919
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1941612918}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ad2917f1246f4059bc852397275fdf29, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  windowParent: {fileID: 1984960528}
-  window: {fileID: 296837998402904528, guid: c801ea80f182f604ea030dfb1f4cfd64, type: 3}
-  containerWindow: {fileID: 7864594216344869733, guid: 33bfb649c89c9ad40b6d9292b4fe0d21, type: 3}
---- !u!4 &1941612920
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1941612918}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1959112485
 GameObject:
   m_ObjectHideFlags: 0
@@ -5242,7 +5196,7 @@ RectTransform:
   - {fileID: 82530680}
   - {fileID: 1984960528}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -5847,6 +5801,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1941612919, guid: c09b88e6d701cea4bbc957f57a2c3049, type: 3}
+      propertyPath: windowParent
+      value: 
+      objectReference: {fileID: 1984960528}
     - target: {fileID: 6539804066123905954, guid: c09b88e6d701cea4bbc957f57a2c3049, type: 3}
       propertyPath: m_Name
       value: Globals
@@ -6042,7 +6000,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2503074881655489379, guid: 3d9114e0f02351e468cd94c95749c44d, type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 2503074881655489379, guid: 3d9114e0f02351e468cd94c95749c44d, type: 3}
       propertyPath: m_LocalPosition.x

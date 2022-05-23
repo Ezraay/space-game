@@ -6,6 +6,7 @@ namespace Spaceships.Hangar
 {
     public class HangarManager : MonoBehaviour
     {
+        [SerializeField] private ShipData defaultShip;
         public static string hangarName;
         public static ShipData ActiveShip { get; private set; }
         public static ShipStorage ShipStorage { get; private set; }
@@ -14,12 +15,14 @@ namespace Spaceships.Hangar
         {
             hangarName = HangarData.stationName;
             ShipStorage = ShipStorageManager.GetStorage(hangarName);
-            if (SpaceData.playerShipID != null)
+            if (PlayerData.ShipData == null)
             {
-                ActiveShip = ShipFactory.GetShipData(SpaceData.playerShipID);
-                int shipIndex = ShipStorage.AddShip(ActiveShip);
-                ShipStorage.SetActiveShip(shipIndex);
+                PlayerData.SetShip(defaultShip);
             }
+            
+            ActiveShip = ShipFactory.GetShipData(PlayerData.ShipData.ID);
+            int shipIndex = ShipStorage.AddShip(ActiveShip);
+            ShipStorage.SetActiveShip(shipIndex);
         }
     }
 }

@@ -8,7 +8,7 @@ namespace Spaceships.ItemSystem.Items
         private static readonly Dictionary<string, ItemData> ItemData = new Dictionary<string, ItemData>();
         [SerializeField] private List<ItemData> data;
 
-        private void Start()
+        private void Awake()
         {
             foreach (ItemData item in data)
             {

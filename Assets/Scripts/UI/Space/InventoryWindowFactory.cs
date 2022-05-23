@@ -2,6 +2,7 @@
 using Spaceships.Entities;
 using Spaceships.ItemSystem;
 using Spaceships.ItemSystem.Items;
+using Spaceships.SceneTransitions;
 using UnityEngine;
 
 namespace Spaceships.UI.Space
@@ -30,7 +31,7 @@ namespace Spaceships.UI.Space
             {
                 if (playerInventoryWindow == null)
                 {
-                    playerInventoryWindow = ShowInventory(Player.Inventory);
+                    playerInventoryWindow = ShowInventory(PlayerData.ShipInventory);
                     playerInventoryWindow.OnClose.AddListener(() => playerInventoryWindow = null);
                 }
                 else

@@ -15,7 +15,7 @@ namespace Spaceships.UI.Hangar
             button = GetComponent<Button>();
             button.onClick.AddListener(() =>
             {
-                if (SpaceData.playerShipID != null)
+                if (PlayerData.ShipData != null)
                 {
                     HangarManager.ShipStorage.RemoveActiveShip();
                     Loader.LoadSpace();

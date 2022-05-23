@@ -24,15 +24,15 @@ namespace Spaceships.UI.Space
                 countText.text = item.Count.ToString();
         }
 
-        protected override bool CanDragInto(Window window)
-        {
-            InventoryWindow inventoryWindow = window as InventoryWindow;
-            if (inventoryWindow != null)
-            {
-                return inventoryWindow.CanAddItem(Item);
-            }
-
-            return false;
-        }
+        // public override bool CanDragInto(Window window)
+        // {
+            // InventoryWindow inventoryWindow = window as InventoryWindow;
+            // if (inventoryWindow != null)
+            // {
+            //     return inventoryWindow.CanAddItem(Item);
+            // }
+            //
+            // return false;
+        // }
     }
 }

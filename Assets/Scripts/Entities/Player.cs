@@ -15,7 +15,7 @@ namespace Spaceships.Entities
         [SerializeField] private float interactRadius = 10;
 
         public Vector3 Position => ship == null ? Vector3.zero : ship.transform.position;
-        public static ShipInventory Inventory { get; private set; }
+        // public static ShipInventory Inventory { get; private set; }
 
         public static void SetShip(Ship ship)
         {
@@ -23,11 +23,12 @@ namespace Spaceships.Entities
             shipCombat = ship.GetComponent<ShipCombat>();
             shipCombat.OnDie.AddListener(() =>
             {
-                SpaceData.playerShipID = null;
+                PlayerData.ClearShip();
+                // SpaceData.playerShipID = null;
                 HangarData.stationName = LevelManager.StationName;
                 Loader.LoadHangar();
             });
-            Inventory = new ShipInventory(ship.ShipData);
+            // Inventory = new ShipInventory(ship.ShipData);
         }
 
         public static float DistanceTo(Vector3 position)

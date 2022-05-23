@@ -7,6 +7,7 @@ namespace Spaceships.UI
 {
     public class Window : MonoBehaviour, IPointerDownHandler
     {
+        [SerializeField] protected GameObject content;
         [SerializeField] protected WindowDragBar dragBar;
         [SerializeField] private Image dragVisual;
         [HideInInspector] public RectTransform rectTransform;
@@ -34,13 +35,22 @@ namespace Spaceships.UI
 
         public virtual void Show()
         {
-            dragBar.gameObject.SetActive(true);
+            if (content != null)
+                content.SetActive(true);
+            // dragBar.gameObject.SetActive(true);
             shown = true;
             OnShow.Invoke();
         }
 
+        public virtual void Hide()
+        {
+            shown = false;
+            content?.SetActive(false);
+        }
+        
         public virtual void Close()
         {
+            shown = false;
             OnClose.Invoke();
             Destroy(gameObject);
         }
@@ -48,7 +58,7 @@ namespace Spaceships.UI
         public void Toggle()
         {
             if (shown)
-                Close();
+                Hide();
             else
                 Show();
         }
@@ -67,6 +77,7 @@ namespace Spaceships.UI
         {
         }
 
-        // public virtual bool CanDragOnto(DraggableSlot slot) => false;
+        // public virtual bool CanDragOnto(DraggableSlot slot) => slot.CanDragInto(this);
+        public virtual bool CanDragOnto(DraggableSlot slot) => false;
     }
 }
