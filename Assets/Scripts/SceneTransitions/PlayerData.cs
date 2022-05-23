@@ -17,7 +17,20 @@ namespace Spaceships.SceneTransitions
             ShipInventory = new ShipInventory(shipData); // TODO: Add persistence to inventory
             
             // TODO: Only for testing
-            ShipInventory.AddItem(ItemFactory.CreateItem("metal_chunk", 100));
+            ShipInventory.AddItem(ItemFactory.CreateItem("metal_chunk", 10));
+            ShipInventory.AddItem(ItemFactory.CreateItem("metal_chunk", 10));
+            ShipInventory.AddItem(ItemFactory.CreateItem("metal_chunk", 10));
+            ShipInventory.AddItem(ItemFactory.CreateItem("metal_chunk", 10));
+            ShipInventory.AddItem(ItemFactory.CreateItem("metal_chunk", 10));
+            ShipInventory.AddItem(ItemFactory.CreateItem("metal_chunk", 10));
+            ShipInventory.AddItem(ItemFactory.CreateItem("metal_chunk", 10));
+            ShipInventory.AddItem(ItemFactory.CreateItem("metal_chunk", 10));
+            ShipInventory.AddItem(ItemFactory.CreateItem("metal_chunk", 10));
+            ShipInventory.AddItem(ItemFactory.CreateItem("metal_chunk", 10));
+            ShipInventory.AddItem(ItemFactory.CreateItem("metal_chunk", 10));
+            ShipInventory.AddItem(ItemFactory.CreateItem("metal_chunk", 10));
+            ShipInventory.AddItem(ItemFactory.CreateItem("metal_chunk", 10));
+            ShipInventory.AddItem(ItemFactory.CreateItem("metal_chunk", 10));
             
             OnShipChanged.Invoke(shipData);
         }
